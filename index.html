@@ -632,7 +632,7 @@
                   onchange="updateProductSelection()">
                 <div
                   class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
-                  <i class="fa-regular fa-window-maximize"></i>
+                  <i class="fa-solid fa-table-columns"></i>
                 </div>
                 <span class="text-sm font-semibold text-slate-900">Finestre & Balconi</span>
                 <span class="text-[11px] text-slate-500">1 o 2 ante / Scorrevoli</span>
@@ -646,7 +646,7 @@
                   <i class="fa-solid fa-door-closed"></i>
                 </div>
                 <span class="text-sm font-semibold text-slate-900">Porte Blindate</span>
-                <span class="text-[11px] text-slate-500">Classe 3 o 4 di sicurezza</span>
+                <span class="text-[11px] text-slate-500">Su misura o standard</span>
               </label>
 
               <label
@@ -654,7 +654,7 @@
                 <input type="radio" name="product" value="tende" class="hidden" onchange="updateProductSelection()">
                 <div
                   class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
-                  <i class="fa-solid fa-umbrella"></i>
+                  <i class="fa-solid fa-sun"></i>
                 </div>
                 <span class="text-sm font-semibold text-slate-900">Tende da Sole</span>
                 <span class="text-[11px] text-slate-500">A caduta / A bracci</span>
@@ -665,7 +665,7 @@
                 <input type="radio" name="product" value="pergole" class="hidden" onchange="updateProductSelection()">
                 <div
                   class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
-                  <i class="fa-solid fa-campground"></i>
+                  <i class="fa-solid fa-house-chimney-window"></i>
                 </div>
                 <span class="text-sm font-semibold text-slate-900">Pergole & Bioclimatiche</span>
                 <span class="text-[11px] text-slate-500">Living Outdoor</span>
@@ -689,7 +689,7 @@
                   onchange="updateProductSelection()">
                 <div
                   class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
-                  <i class="fa-solid fa-border-all"></i>
+                  <i class="fa-solid fa-shield-virus"></i>
                 </div>
                 <span class="text-sm font-semibold text-slate-900">Zanzariere</span>
                 <span class="text-[11px] text-slate-500">Scorrevoli / Plissettate</span>
@@ -1137,6 +1137,7 @@
     // ================= CONFIGURAZIONE PREVENTIVATORE PER PRODOTTO =================
 
     const PRODUCT_CONFIG = {
+      // ---------- FINESTRE ----------
       finestre: {
         name: 'Finestre / Balconi',
         step2Title: '2. Seleziona il materiale preferito:',
@@ -1149,8 +1150,9 @@
           label: 'Tipologia Vetro:',
           name: 'glass',
           options: [
-            { value: 'doppio', label: 'Doppio Vetro Basso Emissivo con Gas Argon (Standard)', multiplier: 1 },
-            { value: 'triplo', label: 'Triplo Vetro Isolamento Acustico & Termico Avanzato (+15%)', multiplier: 1.15 }
+            { value: 'doppio', label: 'Doppio Vetro Basso Emissivo con Gas Argon (Standard)', sublabel: '33.1-16Arg-33.1 BE Ug 1.0', multiplier: 1 },
+            { value: 'triplo', label: 'Triplo Vetro Isolamento Acustico & Termico Avanzato (+15%)', sublabel: '33.1-12Arg-4mm-12Arg-33.1 B.E Ug 0.9', multiplier: 1.15 },
+            { value: 'triplo-plus', label: 'Triplo Vetro Isolamento Acustico & Termico Avanzato (+60€/mq)', sublabel: '33.1-14Arg-4mm-1Arg-33.1 B.E Ug 0.6', multiplier: 1.30 }
           ]
         },
         measures: {
@@ -1164,22 +1166,35 @@
         }
       },
 
+      // ---------- PORTE BLINDATE ----------
       blindati: {
         name: 'Porta Blindata',
-        step2Title: '2. Seleziona la classe di sicurezza:',
+        step2Title: '2. Seleziona la tipologia di porta blindata:',
         materials: [
-          { value: 'classe3', label: 'Classe 3 Antieffrazione', desc: 'Protezione standard certificata, ideale per appartamenti in condominio.' },
-          { value: 'classe4', label: 'Classe 4 Antieffrazione', desc: 'Massima sicurezza, ideale per ville e abitazioni isolate.' },
-          { value: 'lusso', label: 'Blindato di Lusso su Misura', desc: 'Pannelli pantografati, finiture pregiate e serratura biometrica.' }
+          { value: 'su-misura', label: 'Porte blindate su misura', desc: 'Pannelli pantografati, finiture pregiate e serratura biometrica.' },
+          { value: 'standard', label: 'Porte blindate standard', desc: 'Misure 90 x 210. Protezione standard certificata, ideale per appartamenti in condominio.' }
         ],
-        extra: {
-          label: 'Tipo di Pannello:',
-          name: 'pannello',
-          options: [
-            { value: 'classico', label: 'Pannello Classico (marrone/nero)', multiplier: 1 },
-            { value: 'moderno', label: 'Pannello Moderno (grigio/bianco) (+5%)', multiplier: 1.05 },
-            { value: 'pantografato', label: 'Pannello Pantografato di Design (+20%)', multiplier: 1.20 }
-          ]
+        // Le opzioni extra cambiano in base al materiale (su misura / standard)
+        extraByMaterial: {
+          'su-misura': {
+            label: 'Tipologia Pannello:',
+            name: 'pannello',
+            options: [
+              { value: 'classico', label: 'Pannello Classico (marrone/nero)', multiplier: 1 },
+              { value: 'moderno', label: 'Pannello Moderno (grigio/bianco) (+5%)', multiplier: 1.05 },
+              { value: 'pantografato', label: 'Pannello Pantografato di Design (+20%)', multiplier: 1.20 },
+              { value: 'tinta-unita', label: 'Tinta unita verniciata a fuoco (+15%)', multiplier: 1.15 }
+            ]
+          },
+          'standard': {
+            label: 'Tipologia Pannello:',
+            name: 'pannello',
+            options: [
+              { value: 'classico', label: 'Pannello Classico (marrone/nero)', multiplier: 1 },
+              { value: 'moderno', label: 'Pannello Moderno (grigio/bianco) (+5%)', multiplier: 1.05 },
+              { value: 'pantografato', label: 'Pannello Pantografato di Design (+20%)', multiplier: 1.20 }
+            ]
+          }
         },
         measures: {
           width: { label: 'Larghezza (cm)', default: 90, min: 70, max: 120, hint: 'Standard 80-90 cm' },
@@ -1187,17 +1202,18 @@
         },
         pricing: {
           type: 'pezzo',
-          basePrice: { classe3: 1500, classe4: 2200, lusso: 3500 }
+          basePrice: { 'su-misura': 3500, 'standard': 1500 }
         }
       },
 
+      // ---------- TENDE DA SOLE ----------
       tende: {
         name: 'Tende da Sole',
         step2Title: '2. Seleziona la tipologia di tenda:',
         materials: [
-          { value: 'bracci', label: 'Tenda a Bracci Estensibili', desc: 'Ideale per balconi e terrazzi, apertura motorizzata o manuale.' },
-          { value: 'caduta', label: 'Tenda a Caduta Verticale', desc: 'Perfetta per schermare vetrate e portefinestre dal sole diretto.' },
-          { value: 'cappottina', label: 'Cappottina da Finestra', desc: 'Soluzione classica per finestre, protezione solare e pioggia.' }
+          { value: 'bracci', label: 'Tenda a Bracci Estensibili', desc: 'Ideale per balconi e terrazzi, apertura motorizzata o manuale.', icon: 'fa-arrows-left-right-to-line' },
+          { value: 'caduta', label: 'Tenda a Caduta Verticale', desc: 'Perfetta per schermare vetrate e portefinestre dal sole diretto.', icon: 'fa-arrows-down-to-line' },
+          { value: 'cappottina', label: 'Cappottina da Finestra', desc: 'Soluzione classica per finestre, protezione solare e pioggia.', icon: 'fa-house-chimney' }
         ],
         extra: {
           label: 'Tessuto:',
@@ -1218,13 +1234,14 @@
         }
       },
 
+      // ---------- PERGOLE ----------
       pergole: {
         name: 'Pergola Bioclimatica',
         step2Title: '2. Seleziona la tipologia di pergola:',
         materials: [
-          { value: 'bioclimatica', label: 'Pergola Bioclimatica', desc: 'Lamelle orientabili in alluminio, controllo totale di luce e ventilazione.' },
-          { value: 'pergotenda', label: 'Pergotenda con Telo', desc: 'Struttura in alluminio con telo scorrevole, ideale per terrazzi.' },
-          { value: 'gazebo', label: 'Gazebo Autoportante', desc: 'Struttura indipendente, perfetta per giardini e spazi aperti.' }
+          { value: 'bioclimatica', label: 'Pergola Bioclimatica', desc: 'Lamelle orientabili in alluminio, controllo totale di luce e ventilazione.', icon: 'fa-border-all' },
+          { value: 'pergotenda', label: 'Pergotenda con Telo', desc: 'Struttura in alluminio con telo scorrevole, ideale per terrazzi.', icon: 'fa-awning' },
+          { value: 'gazebo', label: 'Gazebo Autoportante', desc: 'Struttura indipendente, perfetta per giardini e spazi aperti.', icon: 'fa-tent' }
         ],
         extra: {
           label: 'Accessori:',
@@ -1246,21 +1263,40 @@
         }
       },
 
+      // ---------- AVVOLGIBILI / PERSIANE ----------
       avvolgibili: {
         name: 'Avvolgibili & Persiane',
         step2Title: '2. Seleziona la tipologia:',
         materials: [
-          { value: 'alluminio-coibentato', label: 'Avvolgibile Alluminio Coibentato', desc: 'Schiuma poliuretanica interna, massimo isolamento termico.' },
-          { value: 'alluminio-forato', label: 'Avvolgibile Alluminio Forato', desc: 'Ventilazione e filtraggio luce, ideale per cucine e bagni.' },
-          { value: 'persiana-napoletana', label: 'Persiana Napoletana Blindata', desc: 'Acciaio zincato antieffrazione con ovaline orientabili.' }
+          { value: 'alluminio-coibentato', label: 'Avvolgibile Alluminio Coibentato', desc: 'Schiuma poliuretanica interna, massimo isolamento termico.', icon: 'fa-bars' },
+          { value: 'alluminio-forato', label: 'Avvolgibile Alluminio Forato', desc: 'Ventilazione e filtraggio luce, ideale per cucine e bagni.', icon: 'fa-bars-staggered' },
+          { value: 'persiana-napoletana', label: 'Persiana Napoletana Blindata', desc: 'Acciaio zincato antieffrazione con ovaline orientabili.', icon: 'fa-shield-halved' }
         ],
-        extra: {
-          label: 'Motorizzazione:',
-          name: 'motorizzazione',
-          options: [
-            { value: 'manuale', label: 'Manuale con Cinghia', multiplier: 1 },
-            { value: 'motorizzato', label: 'Motorizzato Elettrico (+40%)', multiplier: 1.40 }
-          ]
+        // Le opzioni extra cambiano in base al materiale (persiana blindata esclude motorizzazione)
+        extraByMaterial: {
+          'alluminio-coibentato': {
+            label: 'Motorizzazione:',
+            name: 'motorizzazione',
+            options: [
+              { value: 'manuale', label: 'Manuale con Cinghia', multiplier: 1 },
+              { value: 'motorizzato', label: 'Motorizzato Elettrico (+40%)', multiplier: 1.40 }
+            ]
+          },
+          'alluminio-forato': {
+            label: 'Motorizzazione:',
+            name: 'motorizzazione',
+            options: [
+              { value: 'manuale', label: 'Manuale con Cinghia', multiplier: 1 },
+              { value: 'motorizzato', label: 'Motorizzato Elettrico (+40%)', multiplier: 1.40 }
+            ]
+          },
+          'persiana-napoletana': {
+            label: 'Nota:',
+            name: 'nota-persiana',
+            options: [
+              { value: 'nessuna', label: 'La persiana blindata è solo manuale (motorizzazione non disponibile)', multiplier: 1 }
+            ]
+          }
         },
         measures: {
           width: { label: 'Larghezza (cm)', default: 120, min: 50, max: 300, hint: 'Es. 120 per finestra' },
@@ -1273,13 +1309,14 @@
         }
       },
 
+      // ---------- ZANZARIERE ----------
       zanzariere: {
         name: 'Zanzariere',
         step2Title: '2. Seleziona la tipologia di zanzariera:',
         materials: [
-          { value: 'scorrevoli', label: 'Zanzariera Scorrevola', desc: 'Per portefinestre e balconi, scorrimento fluido e silenzioso.' },
-          { value: 'plissettate', label: 'Zanzariera Plissettata', desc: 'Senza barriere a pavimento, ideale per portefinestre (Bettio Scenica).' },
-          { value: 'a-molla', label: 'Zanzariera a Molla / Rullo', desc: 'Per finestre standard, apertura automatica a scomparsa.' }
+          { value: 'scorrevoli', label: 'Zanzariera Scorrevola', desc: 'Per portefinestre e balconi, scorrimento fluido e silenzioso.', icon: 'fa-arrows-left-right' },
+          { value: 'plissettate', label: 'Zanzariera Plissettata', desc: 'Senza barriere a pavimento, ideale per portefinestre (Bettio Scenica).', icon: 'fa-align-justify' },
+          { value: 'a-molla', label: 'Zanzariera a Molla / Rullo', desc: 'Per finestre standard, apertura automatica a scomparsa.', icon: 'fa-arrows-rotate' }
         ],
         extra: {
           label: 'Rete:',
@@ -1347,6 +1384,101 @@
       goToStep(2);
     }
 
+    // ================= RENDER MATERIALI (con eventuale icona) =================
+    function renderMaterials(config) {
+      const materialsContainer = document.getElementById('materials-container');
+      if (!materialsContainer) return;
+      materialsContainer.innerHTML = config.materials.map((mat, index) => `
+        <label class="border-2 border-slate-200 rounded-2xl p-4 hover:border-brand-red cursor-pointer has-[:checked]:border-brand-red has-[:checked]:bg-red-50/30 transition">
+          <input type="radio" name="material" value="${mat.value}" ${index === 0 ? 'checked' : ''}
+            class="text-brand-red focus:ring-brand-red mr-2" onchange="updateExtraOptions()">
+          ${mat.icon ? `<div class="w-10 h-10 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-lg mb-2"><i class="fa-solid ${mat.icon}"></i></div>` : ''}
+          <span class="font-bold text-sm text-slate-900">${mat.label}</span>
+          <p class="text-xs text-slate-500 mt-1">${mat.desc}</p>
+        </label>
+      `).join('');
+    }
+
+    // ================= RENDER OPZIONI EXTRA (in base al materiale) =================
+    function updateExtraOptions() {
+      const productEl = document.querySelector('input[name="product"]:checked');
+      const materialEl = document.querySelector('input[name="material"]:checked');
+      if (!productEl || !materialEl) return;
+
+      const config = PRODUCT_CONFIG[productEl.value];
+      if (!config) return;
+
+      // Determina quale blocco "extra" usare
+      let extra = config.extra;
+      if (config.extraByMaterial && config.extraByMaterial[materialEl.value]) {
+        extra = config.extraByMaterial[materialEl.value];
+      }
+
+      const extraContainer = document.getElementById('extra-options-container');
+      if (!extraContainer) return;
+
+      if (extra) {
+        extraContainer.style.display = '';
+        extraContainer.innerHTML = `
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">${extra.label}</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            ${extra.options.map((opt, i) => `
+              <label class="flex items-start gap-2 cursor-pointer ${extra.name === 'nota-persiana' ? 'opacity-80' : ''}">
+                <input type="radio" name="${extra.name}" value="${opt.value}" ${i === 0 ? 'checked' : ''} class="text-brand-red mt-0.5">
+                <span>
+                  <span class="font-medium">${opt.label}</span>
+                  ${opt.sublabel ? `<span class="block text-[10px] text-slate-500 mt-0.5">${opt.sublabel}</span>` : ''}
+                </span>
+              </label>
+            `).join('')}
+          </div>
+        `;
+      } else {
+        extraContainer.innerHTML = '';
+        extraContainer.style.display = 'none';
+      }
+    }
+
+    // ================= RENDER MISURE =================
+    function renderMeasures(config) {
+      const measuresContainer = document.getElementById('measures-container');
+      const m = config.measures;
+      if (!measuresContainer) return;
+      measuresContainer.innerHTML = `
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-2">${m.width.label}</label>
+          <div class="relative">
+            <input type="number" id="width-input" value="${m.width.default}" min="${m.width.min}" max="${m.width.max}"
+              class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
+            <span class="absolute right-4 top-3 text-slate-400 text-xs font-bold">CM</span>
+          </div>
+          <span class="text-[10px] text-slate-400">${m.width.hint}</span>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-2">${m.height.label}</label>
+          <div class="relative">
+            <input type="number" id="height-input" value="${m.height.default}" min="${m.height.min}" max="${m.height.max}"
+              class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
+            <span class="absolute right-4 top-3 text-slate-400 text-xs font-bold">CM</span>
+          </div>
+          <span class="text-[10px] text-slate-400">${m.height.hint}</span>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Numero di Pezzi</label>
+          <select id="quantity-input"
+            class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
+            <option value="1">1 Pezzo</option>
+            <option value="2">2 Pezzi</option>
+            <option value="3">3 Pezzi</option>
+            <option value="4">4 Pezzi</option>
+            <option value="5" selected>5 Pezzi (Intero Appartamento)</option>
+            <option value="8">8+ Pezzi (Villa / Ristrutturazione)</option>
+          </select>
+          <span class="text-[10px] text-slate-400">Sconti dedicati su più unità</span>
+        </div>
+      `;
+    }
+
     // ================= AGGIORNAMENTO DINAMICO STEP 2 E 3 =================
     function updateProductSelection() {
       const checkedProduct = document.querySelector('input[name="product"]:checked');
@@ -1355,87 +1487,18 @@
       const config = PRODUCT_CONFIG[product];
       if (!config) return;
 
-      // --- STEP 2: Titolo, materiali, opzioni extra ---
+      // STEP 2 - Titolo, materiali, opzioni extra
       const titleEl = document.getElementById('step2-title');
       if (titleEl) titleEl.innerText = config.step2Title;
 
-      // Materiali (stesso stile dell'originale)
-      const materialsContainer = document.getElementById('materials-container');
-      if (materialsContainer) {
-        materialsContainer.innerHTML = config.materials.map((mat, index) => `
-          <label class="border-2 border-slate-200 rounded-2xl p-4 hover:border-brand-red cursor-pointer has-[:checked]:border-brand-red has-[:checked]:bg-red-50/30 transition">
-            <input type="radio" name="material" value="${mat.value}" ${index === 0 ? 'checked' : ''}
-              class="text-brand-red focus:ring-brand-red mr-2">
-            <span class="font-bold text-sm text-slate-900">${mat.label}</span>
-            <p class="text-xs text-slate-500 mt-1">${mat.desc}</p>
-          </label>
-        `).join('');
-      }
+      renderMaterials(config);
+      updateExtraOptions();
 
-      // Opzioni extra (vetro, pannello, tessuto, ecc.) — stesso stile dell'originale
-      const extraContainer = document.getElementById('extra-options-container');
-      const extra = config.extra;
-      if (extraContainer) {
-        if (extra) {
-          extraContainer.style.display = '';
-          extraContainer.innerHTML = `
-            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">${extra.label}</label>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-              ${extra.options.map((opt, i) => `
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="radio" name="${extra.name}" value="${opt.value}" ${i === 0 ? 'checked' : ''} class="text-brand-red">
-                  <span>${opt.label}</span>
-                </label>
-              `).join('')}
-            </div>
-          `;
-        } else {
-          extraContainer.innerHTML = '';
-          extraContainer.style.display = 'none';
-        }
-      }
-
-      // --- STEP 3: Titolo e misure ---
+      // STEP 3 - Titolo e misure
       const step3TitleEl = document.getElementById('step3-title');
       if (step3TitleEl) step3TitleEl.innerText = `3. Inserisci le dimensioni indicative per ${config.name}:`;
 
-      const measuresContainer = document.getElementById('measures-container');
-      const m = config.measures;
-      if (measuresContainer) {
-        measuresContainer.innerHTML = `
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">${m.width.label}</label>
-            <div class="relative">
-              <input type="number" id="width-input" value="${m.width.default}" min="${m.width.min}" max="${m.width.max}"
-                class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
-              <span class="absolute right-4 top-3 text-slate-400 text-xs font-bold">CM</span>
-            </div>
-            <span class="text-[10px] text-slate-400">${m.width.hint}</span>
-          </div>
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">${m.height.label}</label>
-            <div class="relative">
-              <input type="number" id="height-input" value="${m.height.default}" min="${m.height.min}" max="${m.height.max}"
-                class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
-              <span class="absolute right-4 top-3 text-slate-400 text-xs font-bold">CM</span>
-            </div>
-            <span class="text-[10px] text-slate-400">${m.height.hint}</span>
-          </div>
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Numero di Pezzi</label>
-            <select id="quantity-input"
-              class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
-              <option value="1">1 Pezzo</option>
-              <option value="2">2 Pezzi</option>
-              <option value="3">3 Pezzi</option>
-              <option value="4">4 Pezzi</option>
-              <option value="5" selected>5 Pezzi (Intero Appartamento)</option>
-              <option value="8">8+ Pezzi (Villa / Ristrutturazione)</option>
-            </select>
-            <span class="text-[10px] text-slate-400">Sconti dedicati su più unità</span>
-          </div>
-        `;
-      }
+      renderMeasures(config);
     }
 
     // ================= CALCOLO STIMA =================
@@ -1464,9 +1527,14 @@
         singleCost = pricing.basePrice[material] || 1500;
       }
 
-      const extra = config.extra;
+      // Determina quale blocco extra usare
+      let extra = config.extra;
+      if (config.extraByMaterial && config.extraByMaterial[material]) {
+        extra = config.extraByMaterial[material];
+      }
+
       let extraLabel = '';
-      if (extra) {
+      if (extra && extra.name !== 'nota-persiana') {
         const selectedExtra = document.querySelector(`input[name="${extra.name}"]:checked`);
         if (selectedExtra) {
           const opt = extra.options.find(o => o.value === selectedExtra.value);
@@ -1518,9 +1586,6 @@
     }
 
     // ================= INIZIALIZZAZIONE =================
-    // NOTA: NON aggiungiamo un listener "change" sui radio prodotto
-    // perché l'HTML ha già onchange="updateProductSelection()".
-    // Chiamiamo solo una volta updateProductSelection() al caricamento.
     document.addEventListener('DOMContentLoaded', function () {
       updateProductSelection();
     });
