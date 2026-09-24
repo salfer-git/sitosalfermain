@@ -1,0 +1,112 @@
+/*
+ Theme Name:   Real Factory Child
+ Theme URI:    http://demo.goodlayers.com/realfactory
+ Description:  Goodlayers Real Factory Child Theme
+ Author:       Goodlayers
+ Author URI:   http://goodlayers.com
+ Template:     realfactory
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, right-sidebar, responsive-layout
+ Text Domain:  realfactory-child
+
+ START YOUR CHILD THEME CSS HERE
+*/
+p{
+text-align: justify;
+}
+#menu-header-top{
+background:#ccc; height:30px; padding:4px;
+}
+
+.gdlr-core-dropdown-tab-title{
+background-color: #6d6e79 !important;
+color: #0 !important;
+}
+.gdlr-core-dropdown-tab-head-wrap{
+background-color: #6d6e79 !important;
+color: #0 !important;
+}
+.realfactory-page-title-wrap .realfactory-page-title{
+color: #c3c3c3;
+}
+.realfactory-animate-fixed-navigation.realfactory-header-style-plain .realfactory-navigation {
+    padding-top: 40px;
+
+
+}
+.realfactory-animate-fixed-navigation.realfactory-header-style-plain.realfactory-animate-logo-height .realfactory-logo-inner img {
+	height: 65px !important;
+    width: auto;
+
+}
+.realfactory-logo {
+    padding-bottom: 20px;
+    z-index: 4;
+}
+
+.realfactory-header-style-plain .realfactory-header-background{
+box-shadow: 0px 6px 6px #dedede;
+z-index: 3;
+}
+.realfactory-main-menu-search-top{
+margin-left: 210px;
+margin-top: 4px;
+}
+.realfactory-main-menu-search-top a{
+padding-right: 20px;
+}
+.p-sfondo{
+	background-color: #e8e8e8;
+	height: 30px;
+	margin-bottom: 20px;
+}
+.gdlr-core-item-pdb {
+    padding-bottom: 10px;
+}
+@media only screen and (max-width: 999px){
+.realfactory-logo{ z-index: 0; }
+}
+.realfactory-top-bar-right .red{
+font-weight: bold;
+color: #d60000!important;
+}
+.box-ico{
+
+margin-left:100px!important;
+margin-top:-10px!important;
+}
+#bottom-banner{
+position:fixed;
+bottom:20px;
+right:20px;
+height:100px;
+width:40%;
+max-width:100px;
+background-size: contain;
+background: url("https://www.stirparo.com/wp-content/uploads/2018/11/prevent-1.png") no-repeat center top;
+z-index:999999;
+}
+#bottom-banner:hover{  
+  box-shadow: 5px 5px 5px #fbfad9;
+      }
+.realfactory-item-mglr{
+opacity: 0.6;
+width: 100%!important;
+}
+.realfactory-main-menu-right{
+display:none;
+}
+.realfactory-header-background{
+height:110px;
+}
+/* sostituzione testo link con immagine
+.menu-item-6721 a{
+	margin-top: -4px;
+text-indent:-9999px;
+background:url("/wp-content/uploads/2022/04/Razional-servizi-area-riservata-1-1.png") no-repeat;
+width:100px;
+height:50px;
+}
+*/
