@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SALFER Infissi & Serramenti | Napoli - Design, Sicurezza e Risparmio Energetico</title>
+  <meta name="description"
+    content="SALFER Infissi: oltre 32 anni di esperienza nella produzione e installazione di infissi in alluminio e PVC, porte blindate, pergole e schermature solari a Napoli. Calcola il tuo preventivo online.">
+
+  <!-- Font Google Outfit + Inter per look moderno italiano -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#c71a1a',
+              redHover: '#a31414',
+              dark: '#121214',
+              darker: '#0a0a0c',
+              gold: '#d4a853',
+              grayBg: '#f8f9fa'
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Stili personalizzati ed effetti grafici */
+    .glass-nav {
+      background: rgba(18, 18, 20, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #f5d77f 0%, #d4a853 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .custom-shape-divider {
+      position: relative;
+    }
+
+    /* Animazioni smooth */
+    @keyframes pulse-subtle {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .pulse-btn {
+      animation: pulse-subtle 2.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-[#fafafa] text-slate-800 font-sans selection:bg-brand-red selection:text-white">
+
+  <!-- ================= TOP BAR INFORMATIVA ================= -->
+  <div class="bg-brand-darker text-xs text-slate-300 py-2 border-b border-white/10 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center space-x-6">
+        <span><i class="fa-solid fa-location-dot text-brand-red mr-1.5"></i> 2 Sedi a Napoli: Poggioreale & Via
+          Provinciale delle Brecce</span>
+        <span><i class="fa-solid fa-clock text-brand-gold mr-1.5"></i> Lun - Ven: 08:30 - 18:30</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="mailto:salfersrl_@outlook.it" class="hover:text-white transition"><i
+            class="fa-solid fa-envelope mr-1"></i> salfersrl_@outlook.it</a>
+        <span class="text-white/20">|</span>
+        <a href="tel:+393483748816" class="hover:text-white transition font-medium"><i
+            class="fa-solid fa-phone mr-1 text-brand-red"></i> +39 348 374 8816</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="glass-nav fixed top-0 w-full z-50 border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+      <!-- LOGO AZIENDALE -->
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <img src="images/Logo.png" alt="SALFER Logo"
+          class="h-12 w-auto object-contain group-hover:scale-105 transition">
+        <div class="flex flex-col">
+          <span class="text-2xl font-extrabold tracking-wider text-white uppercase leading-none">SALFER</span>
+          <span class="text-[10px] tracking-[0.25em] text-brand-gold uppercase font-semibold mt-1">Infissi di
+            Design</span>
+        </div>
+      </a>
+
+      <!-- MENU DESKTOP -->
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-200">
+        <a href="#home" class="hover:text-brand-red transition">Home</a>
+        <a href="#prodotti" class="hover:text-brand-red transition">Collezioni</a>
+        <a href="#Lavori effettuati" class="hover:text-brand-red transition">Video e Lavori</a>
+        <a href="#contatti" class="hover:text-brand-red transition">Contatti</a>
+      </nav>
+
+      <!-- BOTTONE PREVENTIVATORE -->
+      <div class="flex items-center">
+        <a href="#preventivatore"
+          class="bg-brand-red hover:bg-brand-redHover text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-full shadow-lg shadow-brand-red/30 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+          <i class="fa-solid fa-calculator text-xs"></i> Preventivatore
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION CON SUPPORTO VIDEO ================= -->
+  <section id="home"
+    class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-brand-darker">
+
+    <!-- 
+      VIDEO DI SFONDO (Se inserisci il tuo file 'video/hero.mp4' verrà riprodotto automaticamente).
+      Se non hai ancora il file video, il tag mostra l'immagine poster di sfondo di design moderno!
+    -->
+    <div class="absolute inset-0 z-0">
+      <video autoplay muted loop playsinline
+        poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
+        class="w-full h-full object-cover opacity-10 filter brightness-75">
+        <!-- MODIFICA QUI: Inserisci il percorso del tuo file video locale (es. video/hero.mp4) -->
+        <source src="video/hero.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/60 to-transparent"></div>
+    </div>
+
+    <!-- CONTENUTO HERO -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs text-brand-gold font-semibold mb-6">
+        <i class="fa-solid fa-award"></i> Produzione e Installazione Certificata a Napoli
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+        Infissi di Design.<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-brand-gold">
+          Isolamento & Sicurezza Assoluta.
+        </span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-normal leading-relaxed">
+        Riduci i consumi energetici fino al 40% ed eleva lo stile della tua casa con serramenti su misura garantiti nel
+        tempo.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#preventivatore"
+          class="pulse-btn w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-redHover text-white text-base font-bold px-8 py-4 rounded-full shadow-xl shadow-brand-red/40 transition">
+          <i class="fa-solid fa-calculator"></i> Calcola il tuo Preventivo Online
+        </a>
+        <a href="#video-tour"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-base font-semibold px-7 py-4 rounded-full border border-white/20 transition">
+          <i class="fa-solid fa-play text-xs text-brand-gold"></i> Guarda il Video Showroom
+        </a>
+      </div>
+
+      <!-- PUNTI CHIAVE RAPIDI SOTTO LA HERO -->
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-left border-t border-white/10 pt-8 max-w-4xl mx-auto">
+        <div class="flex items-center space-x-3">
+          <i class="fa-solid fa-shield-halved text-2xl text-brand-red"></i>
+          <div>
+            <h4 class="text-sm font-bold text-white">Classe Anti-effrazione</h4>
+            <p class="text-xs text-slate-400">Massima sicurezza casa</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3">
+          <i class="fa-solid fa-temperature-arrow-down text-2xl text-brand-gold"></i>
+          <div>
+            <h4 class="text-sm font-bold text-white">Taglio Termico</h4>
+            <p class="text-xs text-slate-400">Zero spifferi e condensa</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3">
+          <i class="fa-solid fa-screwdriver-wrench text-2xl text-brand-red"></i>
+          <div>
+            <h4 class="text-sm font-bold text-white">Posa Certificata</h4>
+            <p class="text-xs text-slate-400">Tecnici interni specializzati</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3">
+          <i class="fa-solid fa-percent text-2xl text-brand-gold"></i>
+          <div>
+            <h4 class="text-sm font-bold text-white">Detrazioni Fiscali</h4>
+            <p class="text-xs text-slate-400">Pratiche ENEA incluse</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NUMERI E STATISTICHE (32 ANNI) ================= -->
+  <section class="bg-brand-dark py-12 border-y border-white/10 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-x-0 sm:divide-x divide-white/10">
+
+        <div class="px-4">
+          <div class="text-4xl sm:text-5xl font-extrabold text-white mb-1 flex items-center justify-center gap-1">
+            <span>32</span>
+          </div>
+          <p class="text-sm font-semibold text-brand-gold uppercase tracking-wider">Anni di Esperienza</p>
+          <p class="text-xs text-slate-400 mt-1">Artigianato & tecnologia dal 1992</p>
+        </div>
+
+        <div class="px-4">
+          <div class="text-4xl sm:text-5xl font-extrabold text-white mb-1">2</div>
+          <p class="text-sm font-semibold text-brand-gold uppercase tracking-wider">Sedi Operative</p>
+          <p class="text-xs text-slate-400 mt-1">Showroom & Fabbrica a Napoli</p>
+        </div>
+
+        <div class="px-4">
+          <div class="text-4xl sm:text-5xl font-extrabold text-white mb-1">50+</div>
+          <p class="text-sm font-semibold text-brand-gold uppercase tracking-wider">Sistemi e Profili</p>
+          <p class="text-xs text-slate-400 mt-1">Soluzioni per ogni architettura</p>
+        </div>
+
+        <div class="px-4">
+          <div class="text-4xl sm:text-5xl font-extrabold text-white mb-1 text-gradient-gold">7.820+</div>
+          <p class="text-sm font-semibold text-brand-gold uppercase tracking-wider">Infissi Montati</p>
+          <p class="text-xs text-slate-400 mt-1">Clienti soddisfatti in tutta la Campania</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEZIONE COLLEZIONI PRODOTTI (9 CATEGORIE) ================= -->
+  <section id="prodotti" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-brand-red font-bold">Produzione & Installazione</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Le Nostre Collezioni</h2>
+        </div>
+        <p class="text-slate-500 text-sm max-w-md mt-4 md:mt-0">
+          Soluzioni artigianali create su misura con profilati d'eccellenza e certificazioni per il risparmio
+          energetico.
+        </p>
+      </div>
+
+      <!-- GRIGLIA CARDS PRODOTTI CON FOTO REALISTICHE E BADGE -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- 1. Infissi Interni -->
+        <div
+          class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition duration-300 flex flex-col">
+          <a href="infissi.html" class="block relative h-64 overflow-hidden">
+            <img src="images/INFISSI/ALLUMINIO/AGB_187_01.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'"
+              alt="Infissi Interni" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span
+              class="absolute top-4 left-4 bg-brand-red text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Top
+              Seller</span>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <a href="infissi.html">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-red transition">Infissi in Alluminio
+                  & PVC</h3>
+              </a>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Alluminio a taglio termico, PVC ad alta efficienza e Alluminio-Legno. Isolamento acustico e risparmio
+                energetico certificato.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <a href="infissi.html"
+                class="inline-flex items-center text-xs font-bold text-slate-800 hover:text-brand-red">
+                Scopri Collezione e Foto <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+              </a>
+              <a href="#preventivatore" onclick="selectProductPreset('finestre')"
+                class="text-xs font-bold text-brand-red hover:underline">
+                <i class="fa-solid fa-calculator mr-1"></i> Calcola
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Tende da Sole -->
+        <div
+          class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition duration-300 flex flex-col">
+          <a href="tende-da-sole.html" class="block relative h-64 overflow-hidden">
+            <img src="images/Tende da sole/Tende a braccio/tenda_a_bracci_8000_california_ic_tende-800x515.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'"
+              alt="Tende da Sole" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span
+              class="absolute top-4 left-4 bg-slate-900 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">IC
+              Tende</span>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <a href="tende-da-sole.html">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-red transition">Tende da Sole &
+                  Schermature</h3>
+              </a>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Tende a caduta, a bracci estensibili, cappottine e tende da giardino con tessuti idrorepellenti
+                Tempotest ad alta protezione UV.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <a href="tende-da-sole.html"
+                class="inline-flex items-center text-xs font-bold text-slate-800 hover:text-brand-red">
+                Scopri Collezione e Foto <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+              </a>
+              <a href="#preventivatore" onclick="selectProductPreset('tende')"
+                class="text-xs font-bold text-brand-red hover:underline">
+                <i class="fa-solid fa-calculator mr-1"></i> Calcola
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Porte Blindate -->
+        <div
+          class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition duration-300 flex flex-col">
+          <a href="porte-blindate.html" class="block relative h-64 overflow-hidden">
+            <img src="images/Porte blindate/b_PONZIO-100-BL-Ponzio-615496-relcfc49fb0.webp"
+              onerror="this.src='https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80'"
+              alt="Porte Blindate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span
+              class="absolute top-4 left-4 bg-brand-gold text-slate-900 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Ponzio
+              & SALFER</span>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <a href="porte-blindate.html">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-red transition">Porte Blindate di
+                  Sicurezza</h3>
+              </a>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Portoni d'ingresso classe 3 e 4 antieffrazione, cilindri europei anti-bumping e pannelli pantografati
+                classici e moderni.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <a href="porte-blindate.html"
+                class="inline-flex items-center text-xs font-bold text-slate-800 hover:text-brand-red">
+                Scopri Collezione e Foto <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+              </a>
+              <a href="#preventivatore" onclick="selectProductPreset('blindati')"
+                class="text-xs font-bold text-brand-red hover:underline">
+                <i class="fa-solid fa-calculator mr-1"></i> Calcola
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Pergole e Bioclimatiche -->
+        <div
+          class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition duration-300 flex flex-col">
+          <a href="pergotende.html" class="block relative h-64 overflow-hidden">
+            <img src="images/Pergotende est/gazebo_flat_autoportante_ic_tende-800x515.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80'"
+              alt="Pergoltende" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span
+              class="absolute top-4 left-4 bg-brand-dark text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Outdoor
+              Living</span>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <a href="pergotende.html">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-red transition">Pergole Bioclimatiche
+                  & Tende</h3>
+              </a>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Vivi il tuo terrazzo o giardino tutto l'anno. Strutture in alluminio con lamelle orientabili, tende
+                motorizzate e vetrate panoramiche.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <a href="pergotende.html"
+                class="inline-flex items-center text-xs font-bold text-slate-800 hover:text-brand-red">
+                Scopri Collezione e Foto <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+              </a>
+              <a href="#preventivatore" onclick="selectProductPreset('pergole')"
+                class="text-xs font-bold text-brand-red hover:underline">
+                <i class="fa-solid fa-calculator mr-1"></i> Calcola
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Avvolgibili e Frangisole -->
+        <div
+          class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition duration-300 flex flex-col">
+          <a href="avvolgibili.html" class="block relative h-64 overflow-hidden">
+            <img src="images/Avvolgbili oscuranti/Aria Luce/avvolgibile-arialuce-300x300.webp"
+              onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'"
+              alt="Avvolgibili" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span
+              class="absolute top-4 left-4 bg-slate-800 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">AriaLuce
+              & New Solar</span>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <a href="avvolgibili.html">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-red transition">Avvolgibili
+                  Coibentati</h3>
+              </a>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Tapparelle in alluminio ad alta densità con schiuma poliuretanica, sistemi frangisole orientabili New
+                Solar e motorizzazioni silenziose.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <a href="avvolgibili.html"
+                class="inline-flex items-center text-xs font-bold text-slate-800 hover:text-brand-red">
+                Scopri Collezione e Foto <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+              </a>
+              <a href="#preventivatore" onclick="selectProductPreset('avvolgibili')"
+                class="text-xs font-bold text-brand-red hover:underline">
+                <i class="fa-solid fa-calculator mr-1"></i> Calcola
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Persiane e Napoletane -->
+        <div
+          class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition duration-300 flex flex-col">
+          <a href="persiane.html" class="block relative h-64 overflow-hidden">
+            <img src="images/Persiane e scuroni/15493411_PORTA-BLINDO.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80'"
+              alt="Persiane Napoletane"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span
+              class="absolute top-4 left-4 bg-brand-red text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Tradizione
+              Napoletana</span>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <a href="persiane.html">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-red transition">Persiane & Napoletane
+                  Blindate</h3>
+              </a>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                La classica napoletana con ovaline orientabili o fisse, prodotta in acciaio zincato antieffrazione o
+                alluminio resistente all'aria di mare.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <a href="persiane.html"
+                class="inline-flex items-center text-xs font-bold text-slate-800 hover:text-brand-red">
+                Scopri Collezione e Foto <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+              </a>
+              <a href="#preventivatore" onclick="selectProductPreset('avvolgibili')"
+                class="text-xs font-bold text-brand-red hover:underline">
+                <i class="fa-solid fa-calculator mr-1"></i> Calcola
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Cancelli e Serrande in Ferro -->
+        <div
+          class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition duration-300 flex flex-col">
+          <a href="cancelli.html" class="block relative h-64 overflow-hidden">
+            <img src="images/Cancelli in ferro/cancello-scorrevole-in-ferro.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1541888946425-d0fbb186f5f8?auto=format&fit=crop&w=800&q=80'"
+              alt="Cancelli Ferro" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span
+              class="absolute top-4 left-4 bg-slate-900 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Carpenteria
+              Ferro</span>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <a href="cancelli.html">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-red transition">Cancelli, Grate &
+                  Serrande</h3>
+              </a>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Carpenteria metallica: cancelli carrai scorrevoli o a battente, cancelletti pedonali e grate di
+                sicurezza in ferro battuto o zincato.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <a href="cancelli.html"
+                class="inline-flex items-center text-xs font-bold text-slate-800 hover:text-brand-red">
+                Scopri Collezione e Foto <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+              </a>
+              <a href="#contatti" class="text-xs font-bold text-brand-red hover:underline">
+                <i class="fa-solid fa-calendar-check mr-1"></i> Sopralluogo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Zanzariere -->
+        <div
+          class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition duration-300 flex flex-col">
+          <a href="zanzariere.html" class="block relative h-64 overflow-hidden">
+            <img src="images/Zanzariere/scenica-deck-_by_bettio.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'"
+              alt="Zanzariere" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span
+              class="absolute top-4 left-4 bg-brand-gold text-slate-900 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Bettio</span>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <a href="zanzariere.html">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-red transition">Zanzariere
+                  Plissettate & Scorrevoli</h3>
+              </a>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Sistemi senza barriere a pavimento (Bettio Scenica), modelli verticali a catena o molla, e reti ad alta
+                resistenza contro il vento.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <a href="zanzariere.html"
+                class="inline-flex items-center text-xs font-bold text-slate-800 hover:text-brand-red">
+                Scopri Collezione e Foto <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+              </a>
+              <a href="#preventivatore" onclick="selectProductPreset('zanzariere')"
+                class="text-xs font-bold text-brand-red hover:underline">
+                <i class="fa-solid fa-calculator mr-1"></i> Calcola
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Rivestimenti e Facciate -->
+        <div
+          class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition duration-300 flex flex-col">
+          <a href="rivestimenti.html" class="block relative h-64 overflow-hidden">
+            <img src="images/Rivestimenti/facciata albond.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'"
+              alt="Rivestimenti" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span
+              class="absolute top-4 left-4 bg-brand-dark text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Albond
+              & Design</span>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <a href="rivestimenti.html">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-red transition">Rivestimenti & Pareti
+                  Tecniche</h3>
+              </a>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Facciate ventilate in alluminio composito (Albond), profili frangisole di design e pannellature da
+                parete per interni ed esterni moderni.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <a href="rivestimenti.html"
+                class="inline-flex items-center text-xs font-bold text-slate-800 hover:text-brand-red">
+                Scopri Collezione e Foto <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+              </a>
+              <a href="#contatti" class="text-xs font-bold text-brand-red hover:underline">
+                <i class="fa-solid fa-calendar-check mr-1"></i> Sopralluogo
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= IL PREVENTIVATORE INTERATTIVO (FEATURE PRINCIPALE) ================= -->
+  <section id="preventivatore" class="py-20 bg-gradient-to-b from-[#f4f5f7] to-white relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span
+          class="inline-block text-xs uppercase tracking-widest text-brand-red font-bold bg-brand-red/10 px-3 py-1 rounded-full mb-3">
+          Configuratore Online 24/7
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Calcola la Stima del Tuo Preventivo
+        </h2>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base">
+          Seleziona il tipo di prodotto, le misure approssimative e visualizza subito una stima di costo indicativa.
+        </p>
+      </div>
+
+      <!-- CONTENITORE PREVENTIVATORE -->
+      <div class="bg-white rounded-3xl shadow-2xl border border-slate-200/80 p-6 sm:p-10 relative overflow-hidden">
+
+        <!-- BARRA PROGRESSO STEP -->
+        <div
+          class="flex items-center justify-between mb-8 pb-6 border-b border-slate-100 text-xs sm:text-sm font-medium">
+          <div id="step-ind-1" class="flex items-center gap-2 text-brand-red font-bold">
+            <span class="w-7 h-7 rounded-full bg-brand-red text-white flex items-center justify-center text-xs">1</span>
+            <span>Prodotto</span>
+          </div>
+          <div class="h-0.5 w-8 sm:w-16 bg-slate-200"></div>
+          <div id="step-ind-2" class="flex items-center gap-2 text-slate-400">
+            <span
+              class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-xs">2</span>
+            <span>Materiale</span>
+          </div>
+          <div class="h-0.5 w-8 sm:w-16 bg-slate-200"></div>
+          <div id="step-ind-3" class="flex items-center gap-2 text-slate-400">
+            <span
+              class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-xs">3</span>
+            <span>Misure</span>
+          </div>
+          <div class="h-0.5 w-8 sm:w-16 bg-slate-200"></div>
+          <div id="step-ind-4" class="flex items-center gap-2 text-slate-400">
+            <span
+              class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-xs">4</span>
+            <span>Risultato</span>
+          </div>
+        </div>
+
+        <form id="quote-form" onsubmit="event.preventDefault();">
+
+          <!-- STEP 1: SCELTA PRODOTTO -->
+          <div id="step-1" class="space-y-6">
+            <h3 class="text-lg font-bold text-slate-800">1. Che tipologia di infisso o serramento ti interessa?</h3>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+
+              <label
+                class="cursor-pointer border-2 border-slate-200 rounded-2xl p-4 text-center hover:border-brand-red hover:bg-red-50/20 transition flex flex-col items-center group has-[:checked]:border-brand-red has-[:checked]:bg-red-50/40">
+                <input type="radio" name="product" value="finestre" checked class="hidden"
+                  onchange="updateProductSelection()">
+                <div
+                  class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
+                  <i class="fa-regular fa-window-maximize"></i>
+                </div>
+                <span class="text-sm font-semibold text-slate-900">Finestre & Balconi</span>
+                <span class="text-[11px] text-slate-500">1 o 2 ante / Scorrevoli</span>
+              </label>
+
+              <label
+                class="cursor-pointer border-2 border-slate-200 rounded-2xl p-4 text-center hover:border-brand-red hover:bg-red-50/20 transition flex flex-col items-center group has-[:checked]:border-brand-red has-[:checked]:bg-red-50/40">
+                <input type="radio" name="product" value="blindati" class="hidden" onchange="updateProductSelection()">
+                <div
+                  class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
+                  <i class="fa-solid fa-door-closed"></i>
+                </div>
+                <span class="text-sm font-semibold text-slate-900">Porte Blindate</span>
+                <span class="text-[11px] text-slate-500">Classe 3 o 4 di sicurezza</span>
+              </label>
+
+              <label
+                class="cursor-pointer border-2 border-slate-200 rounded-2xl p-4 text-center hover:border-brand-red hover:bg-red-50/20 transition flex flex-col items-center group has-[:checked]:border-brand-red has-[:checked]:bg-red-50/40">
+                <input type="radio" name="product" value="tende" class="hidden" onchange="updateProductSelection()">
+                <div
+                  class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
+                  <i class="fa-solid fa-umbrella"></i>
+                </div>
+                <span class="text-sm font-semibold text-slate-900">Tende da Sole</span>
+                <span class="text-[11px] text-slate-500">A caduta / A bracci</span>
+              </label>
+
+              <label
+                class="cursor-pointer border-2 border-slate-200 rounded-2xl p-4 text-center hover:border-brand-red hover:bg-red-50/20 transition flex flex-col items-center group has-[:checked]:border-brand-red has-[:checked]:bg-red-50/40">
+                <input type="radio" name="product" value="pergole" class="hidden" onchange="updateProductSelection()">
+                <div
+                  class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
+                  <i class="fa-solid fa-campground"></i>
+                </div>
+                <span class="text-sm font-semibold text-slate-900">Pergole & Bioclimatiche</span>
+                <span class="text-[11px] text-slate-500">Living Outdoor</span>
+              </label>
+
+              <label
+                class="cursor-pointer border-2 border-slate-200 rounded-2xl p-4 text-center hover:border-brand-red hover:bg-red-50/20 transition flex flex-col items-center group has-[:checked]:border-brand-red has-[:checked]:bg-red-50/40">
+                <input type="radio" name="product" value="avvolgibili" class="hidden"
+                  onchange="updateProductSelection()">
+                <div
+                  class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+                <span class="text-sm font-semibold text-slate-900">Avvolgibili / Persiane</span>
+                <span class="text-[11px] text-slate-500">Alluminio coibentato / Acciaio</span>
+              </label>
+
+              <label
+                class="cursor-pointer border-2 border-slate-200 rounded-2xl p-4 text-center hover:border-brand-red hover:bg-red-50/20 transition flex flex-col items-center group has-[:checked]:border-brand-red has-[:checked]:bg-red-50/40">
+                <input type="radio" name="product" value="zanzariere" class="hidden"
+                  onchange="updateProductSelection()">
+                <div
+                  class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
+                  <i class="fa-solid fa-border-all"></i>
+                </div>
+                <span class="text-sm font-semibold text-slate-900">Zanzariere</span>
+                <span class="text-[11px] text-slate-500">Scorrevoli / Plissettate</span>
+              </label>
+
+            </div>
+
+            <div class="flex justify-end pt-4">
+              <button type="button" onclick="goToStep(2)"
+                class="bg-brand-red hover:bg-brand-redHover text-white px-8 py-3 rounded-full font-bold text-sm shadow-md transition flex items-center gap-2">
+                Prosegui: Scegli Materiale <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: SCELTA MATERIALE E TIPOLOGIA -->
+          <div id="step-2" class="space-y-6 hidden">
+            <h3 class="text-lg font-bold text-slate-800">2. Seleziona il materiale preferito:</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="materials-container">
+              <!-- Riempito dinamicamente in base al prodotto selezionato -->
+              <label
+                class="border-2 border-slate-200 rounded-2xl p-4 hover:border-brand-red cursor-pointer has-[:checked]:border-brand-red has-[:checked]:bg-red-50/30 transition">
+                <input type="radio" name="material" value="alluminio" checked
+                  class="text-brand-red focus:ring-brand-red mr-2">
+                <span class="font-bold text-sm text-slate-900">Alluminio a Taglio Termico</span>
+                <p class="text-xs text-slate-500 mt-1">Design minimale, profilo sottile, massima durata e resistenza
+                  alle intemperie.</p>
+              </label>
+
+              <label
+                class="border-2 border-slate-200 rounded-2xl p-4 hover:border-brand-red cursor-pointer has-[:checked]:border-brand-red has-[:checked]:bg-red-50/30 transition">
+                <input type="radio" name="material" value="pvc" class="text-brand-red focus:ring-brand-red mr-2">
+                <span class="font-bold text-sm text-slate-900">PVC Alta Efficienza</span>
+                <p class="text-xs text-slate-500 mt-1">Eccezionale isolamento termico ed acustico con ottimo rapporto
+                  qualità/prezzo.</p>
+              </label>
+
+              <label
+                class="border-2 border-slate-200 rounded-2xl p-4 hover:border-brand-red cursor-pointer has-[:checked]:border-brand-red has-[:checked]:bg-red-50/30 transition">
+                <input type="radio" name="material" value="legno-alluminio"
+                  class="text-brand-red focus:ring-brand-red mr-2">
+                <span class="font-bold text-sm text-slate-900">Legno / Alluminio</span>
+                <p class="text-xs text-slate-500 mt-1">Il calore naturale del vero legno all'interno con la resistenza
+                  dell'alluminio all'esterno.</p>
+              </label>
+            </div>
+
+            <!-- OPZIONE VETRO -->
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Tipologia
+                Vetro:</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="glass" value="doppio" checked class="text-brand-red">
+                  <span>Doppio Vetro Basso Emissivo con Gas Argon (Standard)</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="glass" value="triplo" class="text-brand-red">
+                  <span>Triplo Vetro Isolamento Acustico & Termico Avanzato (+15%)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="flex justify-between pt-4">
+              <button type="button" onclick="goToStep(1)"
+                class="text-slate-500 hover:text-slate-800 px-6 py-2.5 font-semibold text-sm transition">
+                <i class="fa-solid fa-arrow-left text-xs mr-1"></i> Indietro
+              </button>
+              <button type="button" onclick="goToStep(3)"
+                class="bg-brand-red hover:bg-brand-redHover text-white px-8 py-3 rounded-full font-bold text-sm shadow-md transition flex items-center gap-2">
+                Prosegui: Misure <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: MISURE INDICATIVE -->
+          <div id="step-3" class="space-y-6 hidden">
+            <h3 class="text-lg font-bold text-slate-800">3. Inserisci le dimensioni indicative:</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Larghezza (cm)</label>
+                <div class="relative">
+                  <input type="number" id="width-input" value="120" min="40" max="400"
+                    class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
+                  <span class="absolute right-4 top-3 text-slate-400 text-xs font-bold">CM</span>
+                </div>
+                <span class="text-[10px] text-slate-400">Es. 120 per finestra 2 ante</span>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Altezza (cm)</label>
+                <div class="relative">
+                  <input type="number" id="height-input" value="140" min="40" max="300"
+                    class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
+                  <span class="absolute right-4 top-3 text-slate-400 text-xs font-bold">CM</span>
+                </div>
+                <span class="text-[10px] text-slate-400">Es. 140 per finestra / 220 per balcone</span>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Numero di Pezzi</label>
+                <select id="quantity-input"
+                  class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
+                  <option value="1">1 Pezzo</option>
+                  <option value="2">2 Pezzi</option>
+                  <option value="3">3 Pezzi</option>
+                  <option value="4">4 Pezzi</option>
+                  <option value="5" selected>5 Pezzi (Intero Appartamento)</option>
+                  <option value="8">8+ Pezzi (Villa / Ristrutturazione)</option>
+                </select>
+                <span class="text-[10px] text-slate-400">Sconti dedicati su più unità</span>
+              </div>
+
+            </div>
+
+            <!-- OPZIONE SMALTIMENTO E POSA -->
+            <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-4 flex items-start gap-3">
+              <i class="fa-solid fa-circle-info text-amber-600 mt-1"></i>
+              <div class="text-xs text-slate-700">
+                <span class="font-bold">Smontaggio e smaltimento vecchi infissi:</span>
+                I nostri tecnici si occupano di tutto. Posa qualificata secondo norma UNI 11673 per la massima tenuta
+                termo-acustica.
+              </div>
+            </div>
+
+            <div class="flex justify-between pt-4">
+              <button type="button" onclick="goToStep(2)"
+                class="text-slate-500 hover:text-slate-800 px-6 py-2.5 font-semibold text-sm transition">
+                <i class="fa-solid fa-arrow-left text-xs mr-1"></i> Indietro
+              </button>
+              <button type="button" onclick="calculateQuote()"
+                class="bg-brand-red hover:bg-brand-redHover text-white px-9 py-3 rounded-full font-bold text-sm shadow-xl shadow-brand-red/30 transition flex items-center gap-2">
+                <i class="fa-solid fa-calculator"></i> Calcola Stima Immediata
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: RISULTATO STIMA PREZZO E CONTATTO WHATSAPP -->
+          <div id="step-4" class="space-y-6 hidden text-center">
+
+            <div
+              class="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 border border-emerald-200 px-4 py-1.5 rounded-full text-xs font-bold">
+              <i class="fa-solid fa-check"></i> Calcolo eseguito con successo!
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-slate-900">
+              Stima Indicativa per il Tuo Progetto
+            </h3>
+
+            <!-- BOX PREZZO EVIDENZIATO -->
+            <div
+              class="bg-gradient-to-br from-brand-dark to-brand-darker text-white p-6 sm:p-8 rounded-3xl shadow-xl max-w-lg mx-auto relative overflow-hidden border border-white/10">
+              <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-red/20 rounded-full blur-2xl"></div>
+
+              <div class="text-xs text-brand-gold font-semibold uppercase tracking-widest mb-1">
+                Fascia di Prezzo Stimata (IVA esclusa)
+              </div>
+
+              <div id="price-display" class="text-3xl sm:text-5xl font-black text-white my-3">
+                € 1.850 - € 2.450*
+              </div>
+
+              <div id="summary-details" class="text-xs text-slate-300 border-t border-white/10 pt-3 mt-3">
+                Finestre Alluminio a Taglio Termico • 5 unità • Misure 120x140 cm
+              </div>
+            </div>
+
+            <!-- DISCLAIMER TRASPARENTE RICHIESTO DALL'UTENTE -->
+            <div
+              class="max-w-xl mx-auto bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-600 text-left">
+              <div class="font-bold text-slate-800 flex items-center gap-1.5 mb-1">
+                <i class="fa-solid fa-shield-cat text-brand-red"></i> Trasparenza SALFER sul prezzo:
+              </div>
+              <p class="leading-relaxed">
+                * Il prezzo sopra indicato è una <strong>stima orientativa</strong> elaborata in base alle misure
+                standard e ai materiali selezionati. Il costo definitivo può subire variazioni in base alle specifiche
+                di cantiere, accessori, finiture personalizzate o particolarità rilevate durante il <strong>sopralluogo
+                  tecnico gratuito e senza impegno</strong>.
+              </p>
+            </div>
+
+            <!-- BOTTONI AZIONE DIRETTA -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+              <button type="button" id="whatsapp-send-btn" onclick="sendQuoteWhatsApp()"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-8 py-3.5 rounded-full font-bold text-sm shadow-lg shadow-emerald-600/20 transition">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Blocca Offerta su WhatsApp
+              </button>
+
+              <button type="button" onclick="goToStep(1)"
+                class="w-full sm:w-auto text-slate-600 hover:text-slate-900 border border-slate-300 hover:bg-slate-50 px-6 py-3.5 rounded-full font-semibold text-sm transition">
+                <i class="fa-solid fa-rotate-left mr-1"></i> Ricalcola con Altre Misure
+              </button>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEZIONE VIDEO INTEGRATO (I TUOI VIDEO DIRETTI) ================= -->
+  <section id="video-tour" class="py-20 bg-brand-darker text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Video Showcase</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Guarda SALFER in Azione</h2>
+        <p class="text-slate-400 text-sm mt-3">
+          Dalla lavorazione dei profilati in fabbrica fino alla posa a regola d'arte a casa del cliente. Nessun
+          intermediario.
+        </p>
+      </div>
+
+      <!-- PLAYER VIDEO CENTRALE -->
+      <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-black relative">
+        <!-- 
+          MODIFICA QUI: Inserisci il nome del tuo file video caricato sul sito! 
+          Es. 'video/showroom.mp4' o 'video/installazione.mp4'
+        -->
+        <video controls playsinline class="w-full aspect-video object-cover"
+          poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
+          <source src="video/showroom.mp4" type="video/mp4">
+          Il tuo browser non supporta il tag video HTML5.
+        </video>
+      </div>
+
+      <div class="mt-8 text-center text-xs text-slate-400">
+        <i class="fa-solid fa-circle-play text-brand-red mr-1"></i> Puoi aggiungere o sostituire facilmente qualsiasi
+        video caricandolo nella cartella <code class="bg-white/10 px-2 py-0.5 rounded text-white">video/</code> del tuo
+        sito.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PARTNERS UFFICIALI ================= -->
+  <section class="py-14 bg-white border-y border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <h3 class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-8">
+        I Nostri Marchi & Partner di Fiducia
+      </h3>
+
+      <div
+        class="flex flex-wrap items-center justify-center gap-8 sm:gap-14 opacity-75 grayscale hover:grayscale-0 transition duration-300">
+        <span class="font-extrabold text-2xl tracking-tighter text-slate-700">PONZIO</span>
+        <span class="font-bold text-xl tracking-tight text-slate-700">deceuninck</span>
+        <span class="font-extrabold text-2xl tracking-widest text-slate-700">VESUVIA</span>
+        <span class="font-bold text-xl tracking-wide text-slate-700">IC TENDE</span>
+        <span class="font-extrabold text-2xl tracking-wider text-slate-700">COLMA</span>
+        <span class="font-bold text-xl tracking-tight text-slate-700">CERBONE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PERCHÉ SALFER & LE NOSTRE 2 SEDI ================= -->
+  <section id="perche-noi" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- TESTO & STORIA -->
+        <div>
+          <span class="text-xs uppercase tracking-widest text-brand-red font-bold">Oltre 3 decenni di esperienza</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-6">
+            Non Semplici Infissi,<br>Ma Elementi d'Arredo per la Tua Casa.
+          </h2>
+
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+            Fondata dalla famiglia Balisciano, SALFER unisce la cura della bottega artigiana campana con i più avanzati
+            macchinari di taglio e assemblaggio dei profilati in alluminio e PVC.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div
+                class="w-8 h-8 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Garanzia e Manutenzione Minima</h4>
+                <p class="text-xs text-slate-500">I nostri profilati mantengono colore, allineamento e tenuta stagna per
+                  decenni senza necessitare di verniciature periodiche.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div
+                class="w-8 h-8 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Doppia Sede Operativa a Napoli</h4>
+                <p class="text-xs text-slate-500">Puoi toccare con mano le campionature presso le nostre sedi o fissare
+                  un sopralluogo direttamente nel tuo immobile.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div
+                class="w-8 h-8 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Assistenza per Detrazioni Fiscali</h4>
+                <p class="text-xs text-slate-500">Forniamo la certificazione energetica dei serramenti per accedere ai
+                  bonus casa e alle detrazioni fiscali di legge.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SCHEDE DELLE 2 SEDI CON INDIRIZZI E MAPPE -->
+        <div class="space-y-6">
+
+          <!-- SEDE 1 -->
+          <div class="bg-white p-6 rounded-3xl shadow-md border border-slate-200">
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-brand-red bg-red-50 px-3 py-1 rounded-full">Sede
+                Storica</span>
+              <span class="text-xs text-slate-400">SAL.FER di Balisciano Salvatore</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Via Traccia a Poggioreale, 552</h3>
+            <p class="text-xs text-slate-500 mb-4">80147 Napoli (NA) — P.IVA 07071780634</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://www.google.com/maps/search/?api=1&query=40.865477,14.296688" target="_blank"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full transition">
+                <i class="fa-solid fa-diamond-turn-right text-brand-red"></i> Indicazioni Stradali
+              </a>
+              <a href="tel:+393386643952"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full transition">
+                <i class="fa-solid fa-phone text-brand-red"></i> Salvatore: 338 664 3952
+              </a>
+            </div>
+          </div>
+
+          <!-- SEDE 2 -->
+          <div class="bg-white p-6 rounded-3xl shadow-md border border-slate-200">
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-brand-gold bg-amber-50 px-3 py-1 rounded-full">Stabilimento
+                & Uffici</span>
+              <span class="text-xs text-slate-400">SALFER SRL</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Via Provinciale delle Brecce, 118</h3>
+            <p class="text-xs text-slate-500 mb-4">80147 Napoli (NA) — P.IVA 09335381217</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://www.google.com/maps/search/?api=1&query=40.8653083,14.3255912" target="_blank"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full transition">
+                <i class="fa-solid fa-diamond-turn-right text-brand-gold"></i> Indicazioni Stradali
+              </a>
+              <a href="tel:+393483748816"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full transition">
+                <i class="fa-solid fa-phone text-brand-red"></i> Paolo: 348 374 8816
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SEZIONE CONTATTI & RICHIESTA DIRETTA ================= -->
+  <section id="contatti" class="py-20 bg-brand-dark text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <div>
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Parla con i Nostri Tecnici</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-6">Prenota un Sopralluogo Gratuito</h2>
+          <p class="text-slate-300 text-sm leading-relaxed mb-8">
+            Hai dubbi sulle misure, sulle detrazioni fiscali o sul colore ideale? Contattaci direttamente: i nostri
+            titolari e tecnici qualificati sono a tua disposizione.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+              <div class="w-12 h-12 rounded-xl bg-brand-red/20 text-brand-red flex items-center justify-center text-xl">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Email Commerciale & PEC</p>
+                <a href="mailto:salfersrl_@outlook.it"
+                  class="text-sm font-bold text-white hover:text-brand-gold transition">salfersrl_@outlook.it</a>
+                <p class="text-xs text-slate-400 mt-0.5">PEC: societasalfersrl@pec.it</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+              <div class="w-12 h-12 rounded-xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center text-xl">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">WhatsApp & Telefono Diretto</p>
+                <a href="https://api.whatsapp.com/send?phone=393483748816" target="_blank"
+                  class="text-sm font-bold text-white hover:text-[#25D366] transition">Paolo: +39 348 374 8816</a>
+                <p class="text-xs text-slate-400 mt-0.5">Salvatore: +39 338 664 3952</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SOCIAL LINKS -->
+          <div class="mt-8 pt-6 border-t border-white/10">
+            <p class="text-xs text-slate-400 uppercase tracking-wider mb-3">Seguici sui nostri canali ufficiali:</p>
+            <div class="flex items-center space-x-3">
+              <a href="https://www.facebook.com/SalFerInfissi/" target="_blank"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-red text-white flex items-center justify-center transition">
+                <i class="fa-brands fa-facebook-f text-sm"></i>
+              </a>
+              <a href="https://www.instagram.com/sal.fer_infissi/" target="_blank"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-red text-white flex items-center justify-center transition">
+                <i class="fa-brands fa-instagram text-sm"></i>
+              </a>
+              <a href="https://www.tiktok.com/@salfer_infissi" target="_blank"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-red text-white flex items-center justify-center transition">
+                <i class="fa-brands fa-tiktok text-sm"></i>
+              </a>
+              <a href="https://api.whatsapp.com/send?phone=393483748816" target="_blank"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#25D366] text-white flex items-center justify-center transition">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FORM CONTATTI VIA EMAIL -->
+        <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-md">
+          <h3 class="text-xl font-bold mb-2">Inviaci un Messaggio</h3>
+          <p class="text-xs text-slate-400 mb-6">Ti risponderemo entro 24 ore lavorative.</p>
+
+          <form action="mailto:salfersrl_@outlook.it" method="GET" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Nome e Cognome *</label>
+              <input type="text" required name="subject" placeholder="Es. Mario Rossi"
+                class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-red focus:outline-none transition">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Telefono *</label>
+                <input type="tel" required placeholder="Es. 348 000 0000"
+                  class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-red focus:outline-none transition">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Città / Zona</label>
+                <input type="text" placeholder="Es. Napoli Centro / Pozzuoli"
+                  class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-red focus:outline-none transition">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Dettagli della richiesta</label>
+              <textarea rows="3" name="body"
+                placeholder="Descrivi il lavoro (es. sostituzione 4 finestre e 1 porta blindata)..."
+                class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-red focus:outline-none transition"></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full bg-brand-red hover:bg-brand-redHover text-white font-bold py-3.5 rounded-full text-sm shadow-lg shadow-brand-red/30 transition">
+              Invia Richiesta
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-darker text-slate-400 text-xs py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+
+        <div class="flex items-center space-x-3">
+          <img src="images/Logo.png" alt="SALFER Logo" class="h-10 w-auto object-contain">
+          <div>
+            <span class="text-xl font-black text-white tracking-wider">SALFER</span>
+            <span class="block text-[10px] text-brand-gold tracking-widest uppercase">Infissi di Design</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-slate-300 text-xs font-medium">
+          <a href="#home" class="hover:text-white transition">Home</a>
+          <a href="#prodotti" class="hover:text-white transition">Collezioni</a>
+          <a href="#preventivatore" class="hover:text-white transition">Preventivatore</a>
+          <a href="#video-tour" class="hover:text-white transition">Video</a>
+          <a href="#perche-noi" class="hover:text-white transition">Chi Siamo</a>
+          <a href="#contatti" class="hover:text-white transition">Contatti</a>
+        </div>
+
+        <div class="text-right">
+          <a href="https://www.salfersrl.com" class="text-slate-300 hover:text-white font-bold">www.salfersrl.com</a>
+        </div>
+      </div>
+
+      <div
+        class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-[11px] text-slate-500">
+        <div>
+          <p>© 2026 SALFER SRL & SAL.FER di Balisciano Salvatore. Tutti i diritti riservati.</p>
+          <p class="mt-1">P.IVA 09335381217 | P.IVA 07071780634 — Napoli (NA)</p>
+        </div>
+        <div>
+          <p>Sito web ad altissima velocità ospitato su Cloudflare Pages</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= LOGICA JAVASCRIPT PREVENTIVATORE & INTERAZIONI ================= -->
+  <script>
+    // Dati di configurazione dei prezzi base al mq (modificabili liberamente)
+    const PRICING_CONFIG = {
+      finestre: {
+        name: 'Finestre / Balconi',
+        alluminio: 380, // € al mq
+        pvc: 310,
+        'legno-alluminio': 540,
+        baseUnitPrice: 280
+      },
+      blindati: {
+        name: 'Porta Blindata',
+        alluminio: 950,
+        pvc: 850,
+        'legno-alluminio': 1400,
+        baseUnitPrice: 900
+      },
+      tende: {
+        name: 'Tende da Sole',
+        alluminio: 160,
+        pvc: 140,
+        'legno-alluminio': 220,
+        baseUnitPrice: 250
+      },
+      pergole: {
+        name: 'Pergola Bioclimatica',
+        alluminio: 450,
+        pvc: 390,
+        'legno-alluminio': 650,
+        baseUnitPrice: 1800
+      },
+      avvolgibili: {
+        name: 'Avvolgibili & Persiane',
+        alluminio: 110,
+        pvc: 90,
+        'legno-alluminio': 190,
+        baseUnitPrice: 140
+      },
+      zanzariere: {
+        name: 'Zanzariere Scorrevoli',
+        alluminio: 95,
+        pvc: 85,
+        'legno-alluminio': 110,
+        baseUnitPrice: 95
+      }
+    };
+
+    let currentStep = 1;
+    let selectedQuoteData = {};
+
+    function goToStep(step) {
+      // Nascondi tutti gli step
+      for (let i = 1; i <= 4; i++) {
+        const stepEl = document.getElementById(`step-${i}`);
+        const indEl = document.getElementById(`step-ind-${i}`);
+        if (stepEl) stepEl.classList.add('hidden');
+        if (indEl) {
+          indEl.classList.remove('text-brand-red', 'font-bold');
+          indEl.classList.add('text-slate-400');
+          const circle = indEl.querySelector('span');
+          if (circle) {
+            circle.classList.remove('bg-brand-red', 'text-white');
+            circle.classList.add('bg-slate-100', 'text-slate-500');
+          }
+        }
+      }
+
+      // Mostra lo step target
+      const targetStepEl = document.getElementById(`step-${step}`);
+      const targetIndEl = document.getElementById(`step-ind-${step}`);
+      if (targetStepEl) targetStepEl.classList.remove('hidden');
+      if (targetIndEl) {
+        targetIndEl.classList.add('text-brand-red', 'font-bold');
+        targetIndEl.classList.remove('text-slate-400');
+        const circle = targetIndEl.querySelector('span');
+        if (circle) {
+          circle.classList.add('bg-brand-red', 'text-white');
+          circle.classList.remove('bg-slate-100', 'text-slate-500');
+        }
+      }
+
+      currentStep = step;
+    }
+
+    function selectProductPreset(productVal) {
+      const radio = document.querySelector(`input[name="product"][value="${productVal}"]`);
+      if (radio) {
+        radio.checked = true;
+        updateProductSelection();
+      }
+      goToStep(2);
+    }
+
+    function updateProductSelection() {
+      // Adatta le opzioni se necessario
+    }
+
+    function calculateQuote() {
+      const product = document.querySelector('input[name="product"]:checked').value;
+      const material = document.querySelector('input[name="material"]:checked').value;
+      const glass = document.querySelector('input[name="glass"]:checked').value;
+      const width = parseFloat(document.getElementById('width-input').value) || 120;
+      const height = parseFloat(document.getElementById('height-input').value) || 140;
+      const quantity = parseInt(document.getElementById('quantity-input').value) || 1;
+
+      // Calcolo superficie in M²
+      const areaMq = (width * height) / 10000;
+
+      const config = PRICING_CONFIG[product] || PRICING_CONFIG.finestre;
+      const ratePerMq = config[material] || 350;
+
+      // Calcolo base per pezzo
+      let singleCost = (areaMq * ratePerMq);
+      if (singleCost < config.baseUnitPrice) singleCost = config.baseUnitPrice;
+
+      // Moltiplicatore vetro
+      if (glass === 'triplo') singleCost *= 1.15;
+
+      // Totale per quantità con leggero sconto quantità oltre i 3 pezzi
+      let total = singleCost * quantity;
+      if (quantity >= 5) total *= 0.92; // 8% sconto volume
+      else if (quantity >= 3) total *= 0.95;
+
+      // Range ±12%
+      const minPrice = Math.round((total * 0.88) / 10) * 10;
+      const maxPrice = Math.round((total * 1.12) / 10) * 10;
+
+      // Formatta stringa
+      const formattedRange = `€ ${minPrice.toLocaleString('it-IT')} - € ${maxPrice.toLocaleString('it-IT')}*`;
+
+      document.getElementById('price-display').innerText = formattedRange;
+
+      const summaryText = `${config.name} in ${material.toUpperCase()} • ${quantity} pezz${quantity > 1 ? 'i' : 'o'} (${width}x${height} cm)`;
+      document.getElementById('summary-details').innerText = summaryText;
+
+      // Memorizza per WhatsApp
+      selectedQuoteData = {
+        product: config.name,
+        material: material,
+        width,
+        height,
+        quantity,
+        priceRange: formattedRange
+      };
+
+      goToStep(4);
+    }
+
+    function sendQuoteWhatsApp() {
+      const text = `Salve SALFER, ho calcolato un preventivo sul vostro sito www.salfersrl.com:%0A%0A` +
+        `• *Prodotto:* ${selectedQuoteData.product}%0A` +
+        `• *Materiale:* ${selectedQuoteData.material}%0A` +
+        `• *Misure indicative:* ${selectedQuoteData.width}x${selectedQuoteData.height} cm%0A` +
+        `• *Quantità:* ${selectedQuoteData.quantity} unità%0A` +
+        `• *Stima indicativa:* ${selectedQuoteData.priceRange}%0A%0A` +
+        `Vorrei essere ricontattato per fissare un sopralluogo tecnico gratuito e verificare la fattibilità. Grazie!`;
+
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=393483748816&text=${text}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+
+  <!-- ================= TASTO WHATSAPP FISSO SEMPRE SULLO SCHERMO ================= -->
+  <a href="https://api.whatsapp.com/send?phone=393483748816&text=Salve%20SALFER%2C%20vorrei%20informazioni%20sui%20vostri%20infissi%20e%20serramenti"
+    target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp"
+    class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl shadow-emerald-950/40 hover:scale-105 active:scale-95 transition-all duration-300 group border-2 border-white/20">
+    <i class="fa-brands fa-whatsapp text-2xl sm:text-2xl text-white"></i>
+    <span class="hidden sm:inline font-bold text-xs tracking-wide">Scrivici su WhatsApp</span>
+    <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+    </span>
+  </a>
+
+</body>
+
+</html>
