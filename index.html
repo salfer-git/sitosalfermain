@@ -305,39 +305,34 @@
         </div>
 
         <!-- 2. Tende da Sole -->
-        <div
-          class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition duration-300 flex flex-col">
-          <a href="tende-da-sole.html" class="block relative h-64 overflow-hidden">
-            <img src="images/Tende da sole/Tende a braccio/tenda_a_bracci_8000_california_ic_tende-800x515.jpg"
-              onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'"
-              alt="Tende da Sole" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span
-              class="absolute top-4 left-4 bg-slate-900 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">IC
-              Tende</span>
-          </a>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <a href="tende-da-sole.html">
-                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-red transition">Tende da Sole &
-                  Schermature</h3>
-              </a>
-              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
-                Tende a caduta, a bracci estensibili, cappottine e tende da giardino con tessuti idrorepellenti
-                Tempotest ad alta protezione UV.
-              </p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-              <a href="tende-da-sole.html"
-                class="inline-flex items-center text-xs font-bold text-slate-800 hover:text-brand-red">
-                Scopri Collezione e Foto <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
-              </a>
-              <a href="#preventivatore" onclick="selectProductPreset('tende')"
-                class="text-xs font-bold text-brand-red hover:underline">
-                <i class="fa-solid fa-calculator mr-1"></i> Calcola
-              </a>
-            </div>
-          </div>
-        </div>
+        tende: {
+    name: 'Tende da Sole',
+    step2Title: '2. Seleziona la tipologia di tenda:',
+    materials: [
+      { value: 'bracci', label: 'Tenda a Bracci Estensibili', desc: 'Ideale per balconi e terrazzi, apertura motorizzata o manuale.' },
+      { value: 'caduta', label: 'Tenda a Caduta Verticale', desc: 'Perfetta per schermare vetrate e portefinestre dal sole diretto.' },
+      { value: 'cappottina', label: 'Cappottina da Finestra', desc: 'Soluzione classica per finestre, protezione solare e pioggia.' }
+    ],
+    extraOptions: {
+      label: 'Tessuto:',
+      type: 'radio',
+      name: 'tessuto',
+      options: [
+        { value: 'standard', label: 'Tessuto Acrilico Standard (Tempotest)', multiplier: 1 },
+        { value: 'premium', label: 'Tessuto Premium Idrorepellente (+25%)', multiplier: 1.25 }
+      ]
+    },
+    measures: {
+      width: { label: 'Larghezza (cm)', default: 300, min: 100, max: 600, hint: 'Es. 300 per balcone' },
+      height: { label: 'Altezza/Proiezione (cm)', default: 200, min: 100, max: 400, hint: 'Es. 200 per braccio' }
+    },
+    pricing: {
+      type: 'mq',
+      rates: { bracci: 180, caduta: 150, cappottina: 160 },
+      baseUnitPrice: 250
+    }
+  },
+
 
         <!-- 3. Porte Blindate -->
         <div
