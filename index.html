@@ -8,17 +8,14 @@
   <meta name="description"
     content="SALFER Infissi: oltre 32 anni di esperienza nella produzione e installazione di infissi in alluminio e PVC, porte blindate, pergole e schermature solari a Napoli. Calcola il tuo preventivo online.">
 
-  <!-- Font Google Outfit + Inter per look moderno italiano -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <script>
@@ -44,7 +41,6 @@
   </script>
 
   <style>
-    /* Stili personalizzati ed effetti grafici */
     .glass-nav {
       background: rgba(18, 18, 20, 0.85);
       backdrop-filter: blur(12px);
@@ -61,7 +57,6 @@
       position: relative;
     }
 
-    /* Animazioni smooth */
     @keyframes pulse-subtle {
 
       0%,
@@ -104,7 +99,6 @@
   <header class="glass-nav fixed top-0 w-full z-50 border-b border-white/10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
-      <!-- LOGO AZIENDALE -->
       <a href="index.html" class="flex items-center space-x-3 group">
         <img src="images/Logo.png" alt="SALFER Logo"
           class="h-12 w-auto object-contain group-hover:scale-105 transition">
@@ -115,7 +109,6 @@
         </div>
       </a>
 
-      <!-- MENU DESKTOP -->
       <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-200">
         <a href="#home" class="hover:text-brand-red transition">Home</a>
         <a href="#prodotti" class="hover:text-brand-red transition">Collezioni</a>
@@ -123,7 +116,6 @@
         <a href="#contatti" class="hover:text-brand-red transition">Contatti</a>
       </nav>
 
-      <!-- BOTTONE PREVENTIVATORE -->
       <div class="flex items-center">
         <a href="#preventivatore"
           class="bg-brand-red hover:bg-brand-redHover text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-full shadow-lg shadow-brand-red/30 transition transform hover:-translate-y-0.5 flex items-center gap-2">
@@ -137,21 +129,15 @@
   <section id="home"
     class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-brand-darker">
 
-    <!-- 
-      VIDEO DI SFONDO (Se inserisci il tuo file 'video/hero.mp4' verrà riprodotto automaticamente).
-      Se non hai ancora il file video, il tag mostra l'immagine poster di sfondo di design moderno!
-    -->
     <div class="absolute inset-0 z-0">
       <video autoplay muted loop playsinline
         poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
         class="w-full h-full object-cover opacity-10 filter brightness-75">
-        <!-- MODIFICA QUI: Inserisci il percorso del tuo file video locale (es. video/hero.mp4) -->
         <source src="video/hero.mp4" type="video/mp4">
       </video>
       <div class="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/60 to-transparent"></div>
     </div>
 
-    <!-- CONTENUTO HERO -->
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white">
       <div
         class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs text-brand-gold font-semibold mb-6">
@@ -181,7 +167,6 @@
         </a>
       </div>
 
-      <!-- PUNTI CHIAVE RAPIDI SOTTO LA HERO -->
       <div
         class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-left border-t border-white/10 pt-8 max-w-4xl mx-auto">
         <div class="flex items-center space-x-3">
@@ -266,7 +251,6 @@
         </p>
       </div>
 
-      <!-- GRIGLIA CARDS PRODOTTI CON FOTO REALISTICHE E BADGE -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- 1. Infissi Interni -->
@@ -721,59 +705,37 @@
             </div>
           </div>
 
-          <!-- STEP 2: SCELTA MATERIALE E TIPOLOGIA -->
-          
-<div id="step-2" class="space-y-6 hidden">
-  <h3 class="text-lg font-bold text-slate-800" id="step2-title">2. Seleziona il materiale preferito:</h3>
+          <!-- STEP 2: SCELTA MATERIALE E TIPOLOGIA (DINAMICO) -->
+          <div id="step-2" class="space-y-6 hidden">
+            <h3 class="text-lg font-bold text-slate-800" id="step2-title">2. Seleziona il materiale preferito:</h3>
 
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="materials-container">
-    <!-- Riempito dinamicamente in base al prodotto selezionato -->
-  </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="materials-container">
+              <!-- Riempito dinamicamente in base al prodotto selezionato -->
+            </div>
 
-  <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80" id="extra-options-container">
-    <!-- Riempito dinamicamente in base al prodotto selezionato -->
-  </div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80" id="extra-options-container">
+              <!-- Riempito dinamicamente in base al prodotto selezionato -->
+            </div>
 
-  <div class="flex justify-between pt-4">
-    <button type="button" onclick="goToStep(1)"
-      class="text-slate-500 hover:text-slate-800 px-6 py-2.5 font-semibold text-sm transition">
-      <i class="fa-solid fa-arrow-left text-xs mr-1"></i> Indietro
-    </button>
-    <button type="button" onclick="goToStep(3)"
-      class="bg-brand-red hover:bg-brand-redHover text-white px-8 py-3 rounded-full font-bold text-sm shadow-md transition flex items-center gap-2">
-      Prosegui: Misure <i class="fa-solid fa-arrow-right text-xs"></i>
-    </button>
-  </div>
-</div>
+            <div class="flex justify-between pt-4">
+              <button type="button" onclick="goToStep(1)"
+                class="text-slate-500 hover:text-slate-800 px-6 py-2.5 font-semibold text-sm transition">
+                <i class="fa-solid fa-arrow-left text-xs mr-1"></i> Indietro
+              </button>
+              <button type="button" onclick="goToStep(3)"
+                class="bg-brand-red hover:bg-brand-redHover text-white px-8 py-3 rounded-full font-bold text-sm shadow-md transition flex items-center gap-2">
+                Prosegui: Misure <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+            </div>
+          </div>
 
-          <!-- STEP 3: MISURE INDICATIVE -->
+          <!-- STEP 3: MISURE INDICATIVE (DINAMICO) -->
           <div id="step-3" class="space-y-6 hidden">
-  <h3 class="text-lg font-bold text-slate-800" id="step3-title">3. Inserisci le dimensioni indicative:</h3>
+            <h3 class="text-lg font-bold text-slate-800" id="step3-title">3. Inserisci le dimensioni indicative:</h3>
 
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="measures-container">
-    <!-- Riempito dinamicamente in base al prodotto selezionato -->
-  </div>
-
-  <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-4 flex items-start gap-3">
-    <i class="fa-solid fa-circle-info text-amber-600 mt-1"></i>
-    <div class="text-xs text-slate-700">
-      <span class="font-bold">Smontaggio e smaltimento vecchi infissi:</span>
-      I nostri tecnici si occupano di tutto. Posa qualificata secondo norma UNI 11673 per la massima tenuta
-      termo-acustica.
-    </div>
-  </div>
-
-  <div class="flex justify-between pt-4">
-    <button type="button" onclick="goToStep(2)"
-      class="text-slate-500 hover:text-slate-800 px-6 py-2.5 font-semibold text-sm transition">
-      <i class="fa-solid fa-arrow-left text-xs mr-1"></i> Indietro
-    </button>
-    <button type="button" onclick="calculateQuote()"
-      class="bg-brand-red hover:bg-brand-redHover text-white px-9 py-3 rounded-full font-bold text-sm shadow-xl shadow-brand-red/30 transition flex items-center gap-2">
-      <i class="fa-solid fa-calculator"></i> Calcola Stima Immediata
-    </button>
-  </div>
-</div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="measures-container">
+              <!-- Riempito dinamicamente in base al prodotto selezionato -->
+            </div>
 
             <!-- OPZIONE SMALTIMENTO E POSA -->
             <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-4 flex items-start gap-3">
@@ -862,7 +824,7 @@
     </div>
   </section>
 
-  <!-- ================= SEZIONE VIDEO INTEGRATO (I TUOI VIDEO DIRETTI) ================= -->
+  <!-- ================= SEZIONE VIDEO INTEGRATO ================= -->
   <section id="video-tour" class="py-20 bg-brand-darker text-white relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
@@ -875,12 +837,7 @@
         </p>
       </div>
 
-      <!-- PLAYER VIDEO CENTRALE -->
       <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-black relative">
-        <!-- 
-          MODIFICA QUI: Inserisci il nome del tuo file video caricato sul sito! 
-          Es. 'video/showroom.mp4' o 'video/installazione.mp4'
-        -->
         <video controls playsinline class="w-full aspect-video object-cover"
           poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
           <source src="video/showroom.mp4" type="video/mp4">
@@ -922,7 +879,6 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-        <!-- TESTO & STORIA -->
         <div>
           <span class="text-xs uppercase tracking-widest text-brand-red font-bold">Oltre 3 decenni di esperienza</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-6">
@@ -974,7 +930,6 @@
 
         </div>
 
-        <!-- SCHEDE DELLE 2 SEDI CON INDIRIZZI E MAPPE -->
         <div class="space-y-6">
 
           <!-- SEDE 1 -->
@@ -1068,7 +1023,6 @@
             </div>
           </div>
 
-          <!-- SOCIAL LINKS -->
           <div class="mt-8 pt-6 border-t border-white/10">
             <p class="text-xs text-slate-400 uppercase tracking-wider mb-3">Seguici sui nostri canali ufficiali:</p>
             <div class="flex items-center space-x-3">
@@ -1093,7 +1047,6 @@
 
         </div>
 
-        <!-- FORM CONTATTI VIA EMAIL -->
         <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-md">
           <h3 class="text-xl font-bold mb-2">Inviaci un Messaggio</h3>
           <p class="text-xs text-slate-400 mb-6">Ti risponderemo entro 24 ore lavorative.</p>
@@ -1179,394 +1132,411 @@
     </div>
   </footer>
 
-  <!-- ================= LOGICA JAVASCRIPT PREVENTIVATORE & INTERAZIONI ================= -->
-  // ================= CONFIGURAZIONE PREVENTIVATORE PER PRODOTTO =================
-// Ogni prodotto ha: materiali, opzioni extra, misure e logica di prezzo
+  <!-- ================= LOGICA JAVASCRIPT PREVENTIVATORE ================= -->
+  <script>
+    // ================= CONFIGURAZIONE PREVENTIVATORE PER PRODOTTO =================
 
-const PRODUCT_CONFIG = {
-  // ---------- FINESTRE (già funzionante, mantenuto) ----------
-  finestre: {
-    name: 'Finestre / Balconi',
-    step2Title: '2. Seleziona il materiale preferito:',
-    materials: [
-      { value: 'alluminio', label: 'Alluminio a Taglio Termico', desc: 'Design minimale, profilo sottile, massima durata e resistenza alle intemperie.' },
-      { value: 'pvc', label: 'PVC Alta Efficienza', desc: 'Eccezionale isolamento termico ed acustico con ottimo rapporto qualità/prezzo.' },
-      { value: 'legno-alluminio', label: 'Legno / Alluminio', desc: 'Il calore naturale del vero legno all\'interno con la resistenza dell\'alluminio all\'esterno.' }
-    ],
-    extra: {
-      label: 'Tipologia Vetro:',
-      name: 'glass',
-      options: [
-        { value: 'doppio', label: 'Doppio Vetro Basso Emissivo con Gas Argon (Standard)', multiplier: 1 },
-        { value: 'triplo', label: 'Triplo Vetro Isolamento Acustico & Termico Avanzato (+15%)', multiplier: 1.15 }
-      ]
-    },
-    measures: {
-      width: { label: 'Larghezza (cm)', default: 120, min: 40, max: 400, hint: 'Es. 120 per finestra 2 ante' },
-      height: { label: 'Altezza (cm)', default: 140, min: 40, max: 300, hint: 'Es. 140 per finestra / 220 per balcone' }
-    },
-    pricing: {
-      type: 'mq',
-      rates: { alluminio: 380, pvc: 310, 'legno-alluminio': 540 },
-      baseUnitPrice: 280
-    }
-  },
+    const PRODUCT_CONFIG = {
+      finestre: {
+        name: 'Finestre / Balconi',
+        step2Title: '2. Seleziona il materiale preferito:',
+        materials: [
+          { value: 'alluminio', label: 'Alluminio a Taglio Termico', desc: 'Design minimale, profilo sottile, massima durata e resistenza alle intemperie.' },
+          { value: 'pvc', label: 'PVC Alta Efficienza', desc: 'Eccezionale isolamento termico ed acustico con ottimo rapporto qualità/prezzo.' },
+          { value: 'legno-alluminio', label: 'Legno / Alluminio', desc: 'Il calore naturale del vero legno all\'interno con la resistenza dell\'alluminio all\'esterno.' }
+        ],
+        extra: {
+          label: 'Tipologia Vetro:',
+          name: 'glass',
+          options: [
+            { value: 'doppio', label: 'Doppio Vetro Basso Emissivo con Gas Argon (Standard)', multiplier: 1 },
+            { value: 'triplo', label: 'Triplo Vetro Isolamento Acustico & Termico Avanzato (+15%)', multiplier: 1.15 }
+          ]
+        },
+        measures: {
+          width: { label: 'Larghezza (cm)', default: 120, min: 40, max: 400, hint: 'Es. 120 per finestra 2 ante' },
+          height: { label: 'Altezza (cm)', default: 140, min: 40, max: 300, hint: 'Es. 140 per finestra / 220 per balcone' }
+        },
+        pricing: {
+          type: 'mq',
+          rates: { alluminio: 380, pvc: 310, 'legno-alluminio': 540 },
+          baseUnitPrice: 280
+        }
+      },
 
-  // ---------- PORTE BLINDATE ----------
-  blindati: {
-    name: 'Porta Blindata',
-    step2Title: '2. Seleziona la classe di sicurezza:',
-    materials: [
-      { value: 'classe3', label: 'Classe 3 Antieffrazione', desc: 'Protezione standard certificata, ideale per appartamenti in condominio.' },
-      { value: 'classe4', label: 'Classe 4 Antieffrazione', desc: 'Massima sicurezza, ideale per ville e abitazioni isolate.' },
-      { value: 'lusso', label: 'Blindato di Lusso su Misura', desc: 'Pannelli pantografati, finiture pregiate e serratura biometrica.' }
-    ],
-    extra: {
-      label: 'Tipo di Pannello:',
-      name: 'pannello',
-      options: [
-        { value: 'classico', label: 'Pannello Classico (marrone/nero)', multiplier: 1 },
-        { value: 'moderno', label: 'Pannello Moderno (grigio/bianco) (+5%)', multiplier: 1.05 },
-        { value: 'pantografato', label: 'Pannello Pantografato di Design (+20%)', multiplier: 1.20 }
-      ]
-    },
-    measures: {
-      width: { label: 'Larghezza (cm)', default: 90, min: 70, max: 120, hint: 'Standard 80-90 cm' },
-      height: { label: 'Altezza (cm)', default: 210, min: 200, max: 240, hint: 'Standard 210 cm' }
-    },
-    pricing: {
-      type: 'pezzo',
-      basePrice: { classe3: 1500, classe4: 2200, lusso: 3500 }
-    }
-  },
+      blindati: {
+        name: 'Porta Blindata',
+        step2Title: '2. Seleziona la classe di sicurezza:',
+        materials: [
+          { value: 'classe3', label: 'Classe 3 Antieffrazione', desc: 'Protezione standard certificata, ideale per appartamenti in condominio.' },
+          { value: 'classe4', label: 'Classe 4 Antieffrazione', desc: 'Massima sicurezza, ideale per ville e abitazioni isolate.' },
+          { value: 'lusso', label: 'Blindato di Lusso su Misura', desc: 'Pannelli pantografati, finiture pregiate e serratura biometrica.' }
+        ],
+        extra: {
+          label: 'Tipo di Pannello:',
+          name: 'pannello',
+          options: [
+            { value: 'classico', label: 'Pannello Classico (marrone/nero)', multiplier: 1 },
+            { value: 'moderno', label: 'Pannello Moderno (grigio/bianco) (+5%)', multiplier: 1.05 },
+            { value: 'pantografato', label: 'Pannello Pantografato di Design (+20%)', multiplier: 1.20 }
+          ]
+        },
+        measures: {
+          width: { label: 'Larghezza (cm)', default: 90, min: 70, max: 120, hint: 'Standard 80-90 cm' },
+          height: { label: 'Altezza (cm)', default: 210, min: 200, max: 240, hint: 'Standard 210 cm' }
+        },
+        pricing: {
+          type: 'pezzo',
+          basePrice: { classe3: 1500, classe4: 2200, lusso: 3500 }
+        }
+      },
 
-  // ---------- TENDE DA SOLE ----------
-  tende: {
-    name: 'Tende da Sole',
-    step2Title: '2. Seleziona la tipologia di tenda:',
-    materials: [
-      { value: 'bracci', label: 'Tenda a Bracci Estensibili', desc: 'Ideale per balconi e terrazzi, apertura motorizzata o manuale.' },
-      { value: 'caduta', label: 'Tenda a Caduta Verticale', desc: 'Perfetta per schermare vetrate e portefinestre dal sole diretto.' },
-      { value: 'cappottina', label: 'Cappottina da Finestra', desc: 'Soluzione classica per finestre, protezione solare e pioggia.' }
-    ],
-    extra: {
-      label: 'Tessuto:',
-      name: 'tessuto',
-      options: [
-        { value: 'standard', label: 'Tessuto Acrilico Standard (Tempotest)', multiplier: 1 },
-        { value: 'premium', label: 'Tessuto Premium Idrorepellente (+25%)', multiplier: 1.25 }
-      ]
-    },
-    measures: {
-      width: { label: 'Larghezza (cm)', default: 300, min: 100, max: 600, hint: 'Es. 300 per balcone' },
-      height: { label: 'Altezza/Proiezione (cm)', default: 200, min: 100, max: 400, hint: 'Es. 200 per braccio' }
-    },
-    pricing: {
-      type: 'mq',
-      rates: { bracci: 180, caduta: 150, cappottina: 160 },
-      baseUnitPrice: 250
-    }
-  },
+      tende: {
+        name: 'Tende da Sole',
+        step2Title: '2. Seleziona la tipologia di tenda:',
+        materials: [
+          { value: 'bracci', label: 'Tenda a Bracci Estensibili', desc: 'Ideale per balconi e terrazzi, apertura motorizzata o manuale.' },
+          { value: 'caduta', label: 'Tenda a Caduta Verticale', desc: 'Perfetta per schermare vetrate e portefinestre dal sole diretto.' },
+          { value: 'cappottina', label: 'Cappottina da Finestra', desc: 'Soluzione classica per finestre, protezione solare e pioggia.' }
+        ],
+        extra: {
+          label: 'Tessuto:',
+          name: 'tessuto',
+          options: [
+            { value: 'standard', label: 'Tessuto Acrilico Standard (Tempotest)', multiplier: 1 },
+            { value: 'premium', label: 'Tessuto Premium Idrorepellente (+25%)', multiplier: 1.25 }
+          ]
+        },
+        measures: {
+          width: { label: 'Larghezza (cm)', default: 300, min: 100, max: 600, hint: 'Es. 300 per balcone' },
+          height: { label: 'Altezza/Proiezione (cm)', default: 200, min: 100, max: 400, hint: 'Es. 200 per braccio' }
+        },
+        pricing: {
+          type: 'mq',
+          rates: { bracci: 180, caduta: 150, cappottina: 160 },
+          baseUnitPrice: 250
+        }
+      },
 
-  // ---------- PERGOLE ----------
-  pergole: {
-    name: 'Pergola Bioclimatica',
-    step2Title: '2. Seleziona la tipologia di pergola:',
-    materials: [
-      { value: 'bioclimatica', label: 'Pergola Bioclimatica', desc: 'Lamelle orientabili in alluminio, controllo totale di luce e ventilazione.' },
-      { value: 'pergotenda', label: 'Pergotenda con Telo', desc: 'Struttura in alluminio con telo scorrevole, ideale per terrazzi.' },
-      { value: 'gazebo', label: 'Gazebo Autoportante', desc: 'Struttura indipendente, perfetta per giardini e spazi aperti.' }
-    ],
-    extra: {
-      label: 'Accessori:',
-      name: 'accessori',
-      options: [
-        { value: 'base', label: 'Configurazione Base (manuale)', multiplier: 1 },
-        { value: 'motorizzata', label: 'Motorizzazione Elettrica (+30%)', multiplier: 1.30 },
-        { value: 'vetrate', label: 'Motorizzazione + Vetrate Panoramiche (+60%)', multiplier: 1.60 }
-      ]
-    },
-    measures: {
-      width: { label: 'Larghezza (cm)', default: 400, min: 200, max: 800, hint: 'Es. 400 per terrazzo' },
-      height: { label: 'Profondità (cm)', default: 300, min: 150, max: 600, hint: 'Es. 300 di sporgenza' }
-    },
-    pricing: {
-      type: 'mq',
-      rates: { bioclimatica: 550, pergotenda: 400, gazebo: 480 },
-      baseUnitPrice: 1800
-    }
-  },
+      pergole: {
+        name: 'Pergola Bioclimatica',
+        step2Title: '2. Seleziona la tipologia di pergola:',
+        materials: [
+          { value: 'bioclimatica', label: 'Pergola Bioclimatica', desc: 'Lamelle orientabili in alluminio, controllo totale di luce e ventilazione.' },
+          { value: 'pergotenda', label: 'Pergotenda con Telo', desc: 'Struttura in alluminio con telo scorrevole, ideale per terrazzi.' },
+          { value: 'gazebo', label: 'Gazebo Autoportante', desc: 'Struttura indipendente, perfetta per giardini e spazi aperti.' }
+        ],
+        extra: {
+          label: 'Accessori:',
+          name: 'accessori',
+          options: [
+            { value: 'base', label: 'Configurazione Base (manuale)', multiplier: 1 },
+            { value: 'motorizzata', label: 'Motorizzazione Elettrica (+30%)', multiplier: 1.30 },
+            { value: 'vetrate', label: 'Motorizzazione + Vetrate Panoramiche (+60%)', multiplier: 1.60 }
+          ]
+        },
+        measures: {
+          width: { label: 'Larghezza (cm)', default: 400, min: 200, max: 800, hint: 'Es. 400 per terrazzo' },
+          height: { label: 'Profondità (cm)', default: 300, min: 150, max: 600, hint: 'Es. 300 di sporgenza' }
+        },
+        pricing: {
+          type: 'mq',
+          rates: { bioclimatica: 550, pergotenda: 400, gazebo: 480 },
+          baseUnitPrice: 1800
+        }
+      },
 
-  // ---------- AVVOLGIBILI / PERSIANE ----------
-  avvolgibili: {
-    name: 'Avvolgibili & Persiane',
-    step2Title: '2. Seleziona la tipologia:',
-    materials: [
-      { value: 'alluminio-coibentato', label: 'Avvolgibile Alluminio Coibentato', desc: 'Schiuma poliuretanica interna, massimo isolamento termico.' },
-      { value: 'alluminio-forato', label: 'Avvolgibile Alluminio Forato', desc: 'Ventilazione e filtraggio luce, ideale per cucine e bagni.' },
-      { value: 'persiana-napoletana', label: 'Persiana Napoletana Blindata', desc: 'Acciaio zincato antieffrazione con ovaline orientabili.' }
-    ],
-    extra: {
-      label: 'Motorizzazione:',
-      name: 'motorizzazione',
-      options: [
-        { value: 'manuale', label: 'Manuale con Cinghia', multiplier: 1 },
-        { value: 'motorizzato', label: 'Motorizzato Elettrico (+40%)', multiplier: 1.40 }
-      ]
-    },
-    measures: {
-      width: { label: 'Larghezza (cm)', default: 120, min: 50, max: 300, hint: 'Es. 120 per finestra' },
-      height: { label: 'Altezza (cm)', default: 140, min: 50, max: 280, hint: 'Es. 140 per finestra' }
-    },
-    pricing: {
-      type: 'mq',
-      rates: { 'alluminio-coibentato': 130, 'alluminio-forato': 110, 'persiana-napoletana': 250 },
-      baseUnitPrice: 140
-    }
-  },
+      avvolgibili: {
+        name: 'Avvolgibili & Persiane',
+        step2Title: '2. Seleziona la tipologia:',
+        materials: [
+          { value: 'alluminio-coibentato', label: 'Avvolgibile Alluminio Coibentato', desc: 'Schiuma poliuretanica interna, massimo isolamento termico.' },
+          { value: 'alluminio-forato', label: 'Avvolgibile Alluminio Forato', desc: 'Ventilazione e filtraggio luce, ideale per cucine e bagni.' },
+          { value: 'persiana-napoletana', label: 'Persiana Napoletana Blindata', desc: 'Acciaio zincato antieffrazione con ovaline orientabili.' }
+        ],
+        extra: {
+          label: 'Motorizzazione:',
+          name: 'motorizzazione',
+          options: [
+            { value: 'manuale', label: 'Manuale con Cinghia', multiplier: 1 },
+            { value: 'motorizzato', label: 'Motorizzato Elettrico (+40%)', multiplier: 1.40 }
+          ]
+        },
+        measures: {
+          width: { label: 'Larghezza (cm)', default: 120, min: 50, max: 300, hint: 'Es. 120 per finestra' },
+          height: { label: 'Altezza (cm)', default: 140, min: 50, max: 280, hint: 'Es. 140 per finestra' }
+        },
+        pricing: {
+          type: 'mq',
+          rates: { 'alluminio-coibentato': 130, 'alluminio-forato': 110, 'persiana-napoletana': 250 },
+          baseUnitPrice: 140
+        }
+      },
 
-  // ---------- ZANZARIERE ----------
-  zanzariere: {
-    name: 'Zanzariere',
-    step2Title: '2. Seleziona la tipologia di zanzariera:',
-    materials: [
-      { value: 'scorrevoli', label: 'Zanzariera Scorrevola', desc: 'Per portefinestre e balconi, scorrimento fluido e silenzioso.' },
-      { value: 'plissettate', label: 'Zanzariera Plissettata', desc: 'Senza barriere a pavimento, ideale per portefinestre (Bettio Scenica).' },
-      { value: 'a-molla', label: 'Zanzariera a Molla / Rullo', desc: 'Per finestre standard, apertura automatica a scomparsa.' }
-    ],
-    extra: {
-      label: 'Rete:',
-      name: 'rete',
-      options: [
-        { value: 'standard', label: 'Rete Standard in Fibra di Vetro', multiplier: 1 },
-        { value: 'pet', label: 'Rete Anti-Pet in Alluminio (+30%)', multiplier: 1.30 }
-      ]
-    },
-    measures: {
-      width: { label: 'Larghezza (cm)', default: 100, min: 40, max: 300, hint: 'Es. 100 per finestra' },
-      height: { label: 'Altezza (cm)', default: 140, min: 40, max: 280, hint: 'Es. 140 per finestra' }
-    },
-    pricing: {
-      type: 'mq',
-      rates: { scorrevoli: 120, plissettate: 140, 'a-molla': 100 },
-      baseUnitPrice: 95
-    }
-  }
-};
-
-let currentStep = 1;
-let selectedQuoteData = {};
-
-// ================= NAVIGAZIONE STEP =================
-function goToStep(step) {
-  for (let i = 1; i <= 4; i++) {
-    const stepEl = document.getElementById(`step-${i}`);
-    const indEl = document.getElementById(`step-ind-${i}`);
-    if (stepEl) stepEl.classList.add('hidden');
-    if (indEl) {
-      indEl.classList.remove('text-brand-red', 'font-bold');
-      indEl.classList.add('text-slate-400');
-      const circle = indEl.querySelector('span');
-      if (circle) {
-        circle.classList.remove('bg-brand-red', 'text-white');
-        circle.classList.add('bg-slate-100', 'text-slate-500');
+      zanzariere: {
+        name: 'Zanzariere',
+        step2Title: '2. Seleziona la tipologia di zanzariera:',
+        materials: [
+          { value: 'scorrevoli', label: 'Zanzariera Scorrevola', desc: 'Per portefinestre e balconi, scorrimento fluido e silenzioso.' },
+          { value: 'plissettate', label: 'Zanzariera Plissettata', desc: 'Senza barriere a pavimento, ideale per portefinestre (Bettio Scenica).' },
+          { value: 'a-molla', label: 'Zanzariera a Molla / Rullo', desc: 'Per finestre standard, apertura automatica a scomparsa.' }
+        ],
+        extra: {
+          label: 'Rete:',
+          name: 'rete',
+          options: [
+            { value: 'standard', label: 'Rete Standard in Fibra di Vetro', multiplier: 1 },
+            { value: 'pet', label: 'Rete Anti-Pet in Alluminio (+30%)', multiplier: 1.30 }
+          ]
+        },
+        measures: {
+          width: { label: 'Larghezza (cm)', default: 100, min: 40, max: 300, hint: 'Es. 100 per finestra' },
+          height: { label: 'Altezza (cm)', default: 140, min: 40, max: 280, hint: 'Es. 140 per finestra' }
+        },
+        pricing: {
+          type: 'mq',
+          rates: { scorrevoli: 120, plissettate: 140, 'a-molla': 100 },
+          baseUnitPrice: 95
+        }
       }
+    };
+
+    let currentStep = 1;
+    let selectedQuoteData = {};
+
+    // ================= NAVIGAZIONE STEP =================
+    function goToStep(step) {
+      for (let i = 1; i <= 4; i++) {
+        const stepEl = document.getElementById(`step-${i}`);
+        const indEl = document.getElementById(`step-ind-${i}`);
+        if (stepEl) stepEl.classList.add('hidden');
+        if (indEl) {
+          indEl.classList.remove('text-brand-red', 'font-bold');
+          indEl.classList.add('text-slate-400');
+          const circle = indEl.querySelector('span');
+          if (circle) {
+            circle.classList.remove('bg-brand-red', 'text-white');
+            circle.classList.add('bg-slate-100', 'text-slate-500');
+          }
+        }
+      }
+
+      const targetStepEl = document.getElementById(`step-${step}`);
+      const targetIndEl = document.getElementById(`step-ind-${step}`);
+      if (targetStepEl) targetStepEl.classList.remove('hidden');
+      if (targetIndEl) {
+        targetIndEl.classList.add('text-brand-red', 'font-bold');
+        targetIndEl.classList.remove('text-slate-400');
+        const circle = targetIndEl.querySelector('span');
+        if (circle) {
+          circle.classList.add('bg-brand-red', 'text-white');
+          circle.classList.remove('bg-slate-100', 'text-slate-500');
+        }
+      }
+
+      currentStep = step;
     }
-  }
 
-  const targetStepEl = document.getElementById(`step-${step}`);
-  const targetIndEl = document.getElementById(`step-ind-${step}`);
-  if (targetStepEl) targetStepEl.classList.remove('hidden');
-  if (targetIndEl) {
-    targetIndEl.classList.add('text-brand-red', 'font-bold');
-    targetIndEl.classList.remove('text-slate-400');
-    const circle = targetIndEl.querySelector('span');
-    if (circle) {
-      circle.classList.add('bg-brand-red', 'text-white');
-      circle.classList.remove('bg-slate-100', 'text-slate-500');
+    // ================= SELEZIONE PRODOTTO DA CARD =================
+    function selectProductPreset(productVal) {
+      const radio = document.querySelector(`input[name="product"][value="${productVal}"]`);
+      if (radio) {
+        radio.checked = true;
+        updateProductSelection();
+      }
+      goToStep(2);
     }
-  }
 
-  currentStep = step;
-}
+    // ================= AGGIORNAMENTO DINAMICO STEP 2 E 3 =================
+    function updateProductSelection() {
+      const checkedProduct = document.querySelector('input[name="product"]:checked');
+      if (!checkedProduct) return;
+      const product = checkedProduct.value;
+      const config = PRODUCT_CONFIG[product];
+      if (!config) return;
 
-// ================= SELEZIONE PRODOTTO DA CARD =================
-function selectProductPreset(productVal) {
-  const radio = document.querySelector(`input[name="product"][value="${productVal}"]`);
-  if (radio) {
-    radio.checked = true;
-    updateProductSelection();
-  }
-  goToStep(2);
-}
+      // --- STEP 2: Titolo, materiali, opzioni extra ---
+      const titleEl = document.getElementById('step2-title');
+      if (titleEl) titleEl.innerText = config.step2Title;
 
-// ================= AGGIORNAMENTO DINAMICO STEP 2 E 3 =================
-function updateProductSelection() {
-  const product = document.querySelector('input[name="product"]:checked').value;
-  const config = PRODUCT_CONFIG[product];
-  if (!config) return;
-
-  // --- STEP 2: Titolo, materiali, opzioni extra ---
-  document.getElementById('step2-title').innerText = config.step2Title;
-
-  // Materiali (stesso stile dell'originale)
-  const materialsContainer = document.getElementById('materials-container');
-  materialsContainer.innerHTML = config.materials.map((mat, index) => `
-    <label class="border-2 border-slate-200 rounded-2xl p-4 hover:border-brand-red cursor-pointer has-[:checked]:border-brand-red has-[:checked]:bg-red-50/30 transition">
-      <input type="radio" name="material" value="${mat.value}" ${index === 0 ? 'checked' : ''}
-        class="text-brand-red focus:ring-brand-red mr-2">
-      <span class="font-bold text-sm text-slate-900">${mat.label}</span>
-      <p class="text-xs text-slate-500 mt-1">${mat.desc}</p>
-    </label>
-  `).join('');
-
-  // Opzioni extra (vetro, pannello, tessuto, ecc.) — stesso stile dell'originale
-  const extraContainer = document.getElementById('extra-options-container');
-  const extra = config.extra;
-  if (extra) {
-    extraContainer.innerHTML = `
-      <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">${extra.label}</label>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-        ${extra.options.map((opt, i) => `
-          <label class="flex items-center gap-2 cursor-pointer">
-            <input type="radio" name="${extra.name}" value="${opt.value}" ${i === 0 ? 'checked' : ''} class="text-brand-red">
-            <span>${opt.label}</span>
+      // Materiali (stesso stile dell'originale)
+      const materialsContainer = document.getElementById('materials-container');
+      if (materialsContainer) {
+        materialsContainer.innerHTML = config.materials.map((mat, index) => `
+          <label class="border-2 border-slate-200 rounded-2xl p-4 hover:border-brand-red cursor-pointer has-[:checked]:border-brand-red has-[:checked]:bg-red-50/30 transition">
+            <input type="radio" name="material" value="${mat.value}" ${index === 0 ? 'checked' : ''}
+              class="text-brand-red focus:ring-brand-red mr-2">
+            <span class="font-bold text-sm text-slate-900">${mat.label}</span>
+            <p class="text-xs text-slate-500 mt-1">${mat.desc}</p>
           </label>
-        `).join('')}
-      </div>
-    `;
-  } else {
-    extraContainer.innerHTML = '';
-    extraContainer.style.display = 'none';
-  }
+        `).join('');
+      }
 
-  // --- STEP 3: Titolo e misure ---
-  document.getElementById('step3-title').innerText = `3. Inserisci le dimensioni indicative per ${config.name}:`;
+      // Opzioni extra (vetro, pannello, tessuto, ecc.) — stesso stile dell'originale
+      const extraContainer = document.getElementById('extra-options-container');
+      const extra = config.extra;
+      if (extraContainer) {
+        if (extra) {
+          extraContainer.style.display = '';
+          extraContainer.innerHTML = `
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">${extra.label}</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              ${extra.options.map((opt, i) => `
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="${extra.name}" value="${opt.value}" ${i === 0 ? 'checked' : ''} class="text-brand-red">
+                  <span>${opt.label}</span>
+                </label>
+              `).join('')}
+            </div>
+          `;
+        } else {
+          extraContainer.innerHTML = '';
+          extraContainer.style.display = 'none';
+        }
+      }
 
-  const measuresContainer = document.getElementById('measures-container');
-  const m = config.measures;
-  measuresContainer.innerHTML = `
-    <div>
-      <label class="block text-xs font-bold text-slate-700 uppercase mb-2">${m.width.label}</label>
-      <div class="relative">
-        <input type="number" id="width-input" value="${m.width.default}" min="${m.width.min}" max="${m.width.max}"
-          class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
-        <span class="absolute right-4 top-3 text-slate-400 text-xs font-bold">CM</span>
-      </div>
-      <span class="text-[10px] text-slate-400">${m.width.hint}</span>
-    </div>
-    <div>
-      <label class="block text-xs font-bold text-slate-700 uppercase mb-2">${m.height.label}</label>
-      <div class="relative">
-        <input type="number" id="height-input" value="${m.height.default}" min="${m.height.min}" max="${m.height.max}"
-          class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
-        <span class="absolute right-4 top-3 text-slate-400 text-xs font-bold">CM</span>
-      </div>
-      <span class="text-[10px] text-slate-400">${m.height.hint}</span>
-    </div>
-    <div>
-      <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Numero di Pezzi</label>
-      <select id="quantity-input"
-        class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
-        <option value="1">1 Pezzo</option>
-        <option value="2">2 Pezzi</option>
-        <option value="3">3 Pezzi</option>
-        <option value="4">4 Pezzi</option>
-        <option value="5" selected>5 Pezzi (Intero Appartamento)</option>
-        <option value="8">8+ Pezzi (Villa / Ristrutturazione)</option>
-      </select>
-      <span class="text-[10px] text-slate-400">Sconti dedicati su più unità</span>
-    </div>
-  `;
-}
+      // --- STEP 3: Titolo e misure ---
+      const step3TitleEl = document.getElementById('step3-title');
+      if (step3TitleEl) step3TitleEl.innerText = `3. Inserisci le dimensioni indicative per ${config.name}:`;
 
-// ================= CALCOLO STIMA =================
-function calculateQuote() {
-  const product = document.querySelector('input[name="product"]:checked').value;
-  const material = document.querySelector('input[name="material"]:checked').value;
-  const width = parseFloat(document.getElementById('width-input').value) || 120;
-  const height = parseFloat(document.getElementById('height-input').value) || 140;
-  const quantity = parseInt(document.getElementById('quantity-input').value) || 1;
-
-  const config = PRODUCT_CONFIG[product];
-  const pricing = config.pricing;
-
-  let singleCost = 0;
-
-  if (pricing.type === 'mq') {
-    const areaMq = (width * height) / 10000;
-    const ratePerMq = pricing.rates[material] || 350;
-    singleCost = areaMq * ratePerMq;
-    if (singleCost < pricing.baseUnitPrice) singleCost = pricing.baseUnitPrice;
-  } else if (pricing.type === 'pezzo') {
-    singleCost = pricing.basePrice[material] || 1500;
-  }
-
-  // Moltiplicatore opzione extra
-  const extra = config.extra;
-  let extraLabel = '';
-  if (extra) {
-    const selectedExtra = document.querySelector(`input[name="${extra.name}"]:checked`);
-    if (selectedExtra) {
-      const opt = extra.options.find(o => o.value === selectedExtra.value);
-      if (opt) {
-        if (opt.multiplier) singleCost *= opt.multiplier;
-        extraLabel = opt.label;
+      const measuresContainer = document.getElementById('measures-container');
+      const m = config.measures;
+      if (measuresContainer) {
+        measuresContainer.innerHTML = `
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">${m.width.label}</label>
+            <div class="relative">
+              <input type="number" id="width-input" value="${m.width.default}" min="${m.width.min}" max="${m.width.max}"
+                class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
+              <span class="absolute right-4 top-3 text-slate-400 text-xs font-bold">CM</span>
+            </div>
+            <span class="text-[10px] text-slate-400">${m.width.hint}</span>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">${m.height.label}</label>
+            <div class="relative">
+              <input type="number" id="height-input" value="${m.height.default}" min="${m.height.min}" max="${m.height.max}"
+                class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
+              <span class="absolute right-4 top-3 text-slate-400 text-xs font-bold">CM</span>
+            </div>
+            <span class="text-[10px] text-slate-400">${m.height.hint}</span>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Numero di Pezzi</label>
+            <select id="quantity-input"
+              class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-900 font-semibold focus:border-brand-red focus:bg-white focus:outline-none transition">
+              <option value="1">1 Pezzo</option>
+              <option value="2">2 Pezzi</option>
+              <option value="3">3 Pezzi</option>
+              <option value="4">4 Pezzi</option>
+              <option value="5" selected>5 Pezzi (Intero Appartamento)</option>
+              <option value="8">8+ Pezzi (Villa / Ristrutturazione)</option>
+            </select>
+            <span class="text-[10px] text-slate-400">Sconti dedicati su più unità</span>
+          </div>
+        `;
       }
     }
-  }
 
-  // Sconto volume
-  let total = singleCost * quantity;
-  if (quantity >= 5) total *= 0.92;
-  else if (quantity >= 3) total *= 0.95;
+    // ================= CALCOLO STIMA =================
+    function calculateQuote() {
+      const productEl = document.querySelector('input[name="product"]:checked');
+      const materialEl = document.querySelector('input[name="material"]:checked');
+      if (!productEl || !materialEl) return;
 
-  // Range ±12%
-  const minPrice = Math.round((total * 0.88) / 10) * 10;
-  const maxPrice = Math.round((total * 1.12) / 10) * 10;
-  const formattedRange = `€ ${minPrice.toLocaleString('it-IT')} - € ${maxPrice.toLocaleString('it-IT')}*`;
+      const product = productEl.value;
+      const material = materialEl.value;
+      const width = parseFloat(document.getElementById('width-input').value) || 120;
+      const height = parseFloat(document.getElementById('height-input').value) || 140;
+      const quantity = parseInt(document.getElementById('quantity-input').value) || 1;
 
-  document.getElementById('price-display').innerText = formattedRange;
+      const config = PRODUCT_CONFIG[product];
+      const pricing = config.pricing;
 
-  const materialLabel = config.materials.find(m => m.value === material)?.label || material;
-  const summaryText = `${config.name} • ${materialLabel} • ${quantity} pezz${quantity > 1 ? 'i' : 'o'} (${width}x${height} cm)${extraLabel ? ' • ' + extraLabel : ''}`;
-  document.getElementById('summary-details').innerText = summaryText;
+      let singleCost = 0;
 
-  selectedQuoteData = {
-    product: config.name,
-    material: materialLabel,
-    width,
-    height,
-    quantity,
-    priceRange: formattedRange
-  };
+      if (pricing.type === 'mq') {
+        const areaMq = (width * height) / 10000;
+        const ratePerMq = pricing.rates[material] || 350;
+        singleCost = areaMq * ratePerMq;
+        if (singleCost < pricing.baseUnitPrice) singleCost = pricing.baseUnitPrice;
+      } else if (pricing.type === 'pezzo') {
+        singleCost = pricing.basePrice[material] || 1500;
+      }
 
-  goToStep(4);
-}
+      const extra = config.extra;
+      let extraLabel = '';
+      if (extra) {
+        const selectedExtra = document.querySelector(`input[name="${extra.name}"]:checked`);
+        if (selectedExtra) {
+          const opt = extra.options.find(o => o.value === selectedExtra.value);
+          if (opt) {
+            if (opt.multiplier) singleCost *= opt.multiplier;
+            extraLabel = opt.label;
+          }
+        }
+      }
 
-// ================= WHATSAPP =================
-function sendQuoteWhatsApp() {
-  const text = `Salve SALFER, ho calcolato un preventivo sul vostro sito www.salfersrl.com:%0A%0A` +
-    `• *Prodotto:* ${selectedQuoteData.product}%0A` +
-    `• *Tipologia:* ${selectedQuoteData.material}%0A` +
-    `• *Misure indicative:* ${selectedQuoteData.width}x${selectedQuoteData.height} cm%0A` +
-    `• *Quantità:* ${selectedQuoteData.quantity} unità%0A` +
-    `• *Stima indicativa:* ${selectedQuoteData.priceRange}%0A%0A` +
-    `Vorrei essere ricontattato per fissare un sopralluogo tecnico gratuito e verificare la fattibilità. Grazie!`;
+      let total = singleCost * quantity;
+      if (quantity >= 5) total *= 0.92;
+      else if (quantity >= 3) total *= 0.95;
 
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=393483748816&text=${text}`;
-  window.open(whatsappUrl, '_blank');
-}
+      const minPrice = Math.round((total * 0.88) / 10) * 10;
+      const maxPrice = Math.round((total * 1.12) / 10) * 10;
+      const formattedRange = `€ ${minPrice.toLocaleString('it-IT')} - € ${maxPrice.toLocaleString('it-IT')}*`;
 
-// ================= INIZIALIZZAZIONE =================
-document.addEventListener('DOMContentLoaded', function () {
-  // Imposta il listener su tutti i radio prodotto
-  document.querySelectorAll('input[name="product"]').forEach(radio => {
-    radio.addEventListener('change', updateProductSelection);
-  });
-  // Inizializza con il primo prodotto (finestre)
-  updateProductSelection();
-});
+      document.getElementById('price-display').innerText = formattedRange;
+
+      const materialLabel = config.materials.find(m => m.value === material)?.label || material;
+      const summaryText = `${config.name} • ${materialLabel} • ${quantity} pezz${quantity > 1 ? 'i' : 'o'} (${width}x${height} cm)${extraLabel ? ' • ' + extraLabel : ''}`;
+      document.getElementById('summary-details').innerText = summaryText;
+
+      selectedQuoteData = {
+        product: config.name,
+        material: materialLabel,
+        width,
+        height,
+        quantity,
+        priceRange: formattedRange
+      };
+
+      goToStep(4);
+    }
+
+    // ================= WHATSAPP =================
+    function sendQuoteWhatsApp() {
+      const text = `Salve SALFER, ho calcolato un preventivo sul vostro sito www.salfersrl.com:%0A%0A` +
+        `• *Prodotto:* ${selectedQuoteData.product}%0A` +
+        `• *Tipologia:* ${selectedQuoteData.material}%0A` +
+        `• *Misure indicative:* ${selectedQuoteData.width}x${selectedQuoteData.height} cm%0A` +
+        `• *Quantità:* ${selectedQuoteData.quantity} unità%0A` +
+        `• *Stima indicativa:* ${selectedQuoteData.priceRange}%0A%0A` +
+        `Vorrei essere ricontattato per fissare un sopralluogo tecnico gratuito e verificare la fattibilità. Grazie!`;
+
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=393483748816&text=${text}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // ================= INIZIALIZZAZIONE =================
+    // NOTA: NON aggiungiamo un listener "change" sui radio prodotto
+    // perché l'HTML ha già onchange="updateProductSelection()".
+    // Chiamiamo solo una volta updateProductSelection() al caricamento.
+    document.addEventListener('DOMContentLoaded', function () {
+      updateProductSelection();
+    });
+  </script>
+
+  <!-- ================= TASTO WHATSAPP FISSO SEMPRE SULLO SCHERMO ================= -->
+  <a href="https://api.whatsapp.com/send?phone=393483748816&text=Salve%20SALFER%2C%20vorrei%20informazioni%20sui%20vostri%20infissi%20e%20serramenti"
+    target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp"
+    class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl shadow-emerald-950/40 hover:scale-105 active:scale-95 transition-all duration-300 group border-2 border-white/20">
+    <i class="fa-brands fa-whatsapp text-2xl sm:text-2xl text-white"></i>
+    <span class="hidden sm:inline font-bold text-xs tracking-wide">Scrivici su WhatsApp</span>
+    <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+    </span>
+  </a>
 
 </body>
 
