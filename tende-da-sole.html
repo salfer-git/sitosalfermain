@@ -24,7 +24,10 @@
               dark: '#121214',
               darker: '#0a0a0c',
               gold: '#d4a853',
-              grayBg: '#f8f9fa'
+              grayBg: '#f8f9fa',
+              navy: '#0b1a33',
+              navyLight: '#13294b',
+              navyAccent: '#1e3a6b'
             }
           },
           fontFamily: {
@@ -37,7 +40,7 @@
 
   <style>
     .glass-nav {
-      background: rgba(18, 18, 20, 0.92);
+      background: rgba(11, 26, 51, 0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
@@ -77,6 +80,13 @@
       50% { transform: scale(1.08); color: #c71a1a; }
       100% { transform: scale(1); }
     }
+    .hero-gradient {
+      background: linear-gradient(135deg, #0b1a33 0%, #13294b 55%, #1e3a6b 100%);
+    }
+    .hero-pattern {
+      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
   </style>
 </head>
 <body class="bg-[#fafafa] text-slate-800 font-sans selection:bg-brand-red selection:text-white">
@@ -107,11 +117,17 @@
     </div>
   </header>
 
-  <!-- BREADCRUMB & HERO -->
-  <section class="pt-28 pb-16 bg-brand-dark text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+  <!-- HERO BLU ELEGANTE -->
+  <section class="pt-32 pb-20 hero-gradient text-white relative overflow-hidden">
+    <div class="absolute inset-0 hero-pattern opacity-40"></div>
+    <!-- Bagliori decorativi -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-24 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center">
       
-      <nav class="flex items-center space-x-2 text-xs text-slate-400 mb-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center justify-center space-x-2 text-xs text-slate-400 mb-8">
         <a href="index.html" class="hover:text-white transition">Home</a>
         <span>/</span>
         <a href="index.html#prodotti" class="hover:text-white transition">Collezioni</a>
@@ -119,33 +135,44 @@
         <span class="text-brand-gold font-semibold">Tende da Sole</span>
       </nav>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="inline-block text-xs uppercase tracking-widest text-brand-gold font-bold bg-white/10 px-3 py-1 rounded-full mb-3">
-            Partner Ufficiale IC Tende
-          </span>
-          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
-            Tende da Sole & Schermature Solari su Misura
-          </h1>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
-            Proteggi balconi, terrazzi e vetrine dall'irraggiamento estivo, abbassando la temperatura interna fino a 5°C. Tessuti tecnici Tempotest idrorepellenti, strutture in alluminio pressofuso e opzioni motorizzate.
-          </p>
+      <!-- Badge -->
+      <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-brand-gold font-bold bg-white/5 border border-white/10 px-4 py-1.5 rounded-full mb-6">
+        <i class="fa-solid fa-award"></i> Partner Ufficiale IC Tende
+      </span>
 
-          <div class="flex flex-wrap gap-4">
-            <a href="#configuratore" class="bg-brand-red hover:bg-brand-redHover text-white text-sm font-bold px-7 py-3.5 rounded-full shadow-xl shadow-brand-red/30 transition flex items-center gap-2">
-              <i class="fa-solid fa-sliders"></i> Configura la Tua Tenda
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=393483748816&text=Salve%20SALFER%2C%20vorrei%20informazioni%20sulle%20tende%20da%20sole" target="_blank" class="bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-bold px-6 py-3.5 rounded-full shadow-lg transition flex items-center gap-2">
-              <i class="fa-brands fa-whatsapp text-lg"></i> Info su WhatsApp
-            </a>
-          </div>
+      <!-- Titolo -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+        Tende da Sole &<br class="hidden sm:block"> Schermature su Misura
+      </h1>
+
+      <!-- Sottotitolo -->
+      <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+        Proteggi balconi, terrazzi e vetrine dall'irraggiamento estivo, abbassando la temperatura interna fino a 5°C. Tessuti tecnici Tempotest idrorepellenti, strutture in alluminio pressofuso e opzioni motorizzate.
+      </p>
+
+      <!-- Pulsanti -->
+      <div class="flex flex-wrap justify-center gap-4 mb-16">
+        <a href="#configuratore" class="bg-brand-red hover:bg-brand-redHover text-white text-sm font-bold px-8 py-4 rounded-full shadow-xl shadow-brand-red/30 transition flex items-center gap-2">
+          <i class="fa-solid fa-sliders"></i> Configura la Tua Tenda
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=393483748816&text=Salve%20SALFER%2C%20vorrei%20informazioni%20sulle%20tende%20da%20sole" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-bold px-7 py-4 rounded-full transition flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg"></i> Info su WhatsApp
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <div class="flex items-center justify-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-5 py-4">
+          <i class="fa-solid fa-shield-halved text-brand-gold text-lg"></i>
+          <span class="text-xs font-semibold text-slate-200">Certificati contro vento</span>
         </div>
-
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/15 h-96">
-          <img src="images/Tende da sole/Tende a braccio/tenda_a_bracci_8000_california_ic_tende-800x515.jpg" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80'" alt="Tenda a Bracci SALFER" class="w-full h-full object-cover">
-          <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-4 py-2 rounded-xl text-xs text-white">
-            <span class="font-bold text-brand-gold">Modello California 8000</span> • Con bracci a catena Fleyer
-          </div>
+        <div class="flex items-center justify-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-5 py-4">
+          <i class="fa-solid fa-palette text-brand-gold text-lg"></i>
+          <span class="text-xs font-semibold text-slate-200">Tessuti Tempotest</span>
+        </div>
+        <div class="flex items-center justify-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-5 py-4">
+          <i class="fa-solid fa-bolt text-brand-gold text-lg"></i>
+          <span class="text-xs font-semibold text-slate-200">Motori Somfy</span>
         </div>
       </div>
 
@@ -349,7 +376,7 @@
           </div>
 
           <!-- CTA FINALE -->
-          <div class="bg-brand-dark rounded-3xl p-6 sm:p-8 text-white">
+          <div class="bg-brand-navy rounded-3xl p-6 sm:p-8 text-white">
             <div class="flex items-end justify-between mb-5">
               <div>
                 <p class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Totale stimato</p>
@@ -423,10 +450,11 @@
           </div>
         </div>
 
+        <!-- FIX: percorso relativo corretto per la Serie 3000 con cavetti -->
         <div class="group relative rounded-2xl overflow-hidden shadow-md h-64 bg-slate-200">
-          <img src="C:\Users\balis\Desktop\sitosalfermain\images\Tende da sole\Tende a caduta\tenda_a_caduta_3000_con_cavetti_senza_cassonetto_ic_tende-800x516.jpg" alt="Tenda a Caduta 3000" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <img src="images/Tende da sole/Tende a caduta/tenda_a_caduta_3000_con_cavetti_senza_cassonetto_ic_tende-800x516.jpg" alt="Tenda a Caduta 3000 con cavetti" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex items-end">
-            <span class="text-xs font-bold text-white">Serie 3000 con Cassonetto</span>
+            <span class="text-xs font-bold text-white">Serie 3000 con Cavetti</span>
           </div>
         </div>
 
@@ -437,8 +465,9 @@
           </div>
         </div>
 
+        <!-- FIX: percorso relativo corretto per la tenda da giardino America -->
         <div class="group relative rounded-2xl overflow-hidden shadow-md h-64 bg-slate-200">
-          <img src="C:\Users\balis\Desktop\sitosalfermain\images\Tende da sole\Tende da Giardino\giardino-america_Post_1366x880-800x516.jpg" alt="Tenda da Giardino America" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <img src="images/Tende da sole/Tende da Giardino/giardino-america_Post_1366x880-800x516.jpg" alt="Tenda da Giardino America" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex items-end">
             <span class="text-xs font-bold text-white">Tenda Autoportante America</span>
           </div>
@@ -450,7 +479,7 @@
   </section>
 
   <!-- CTA PREVENTIVO -->
-  <section class="py-16 bg-gradient-to-r from-brand-dark to-brand-darker text-white text-center">
+  <section class="py-16 bg-gradient-to-r from-brand-navy to-brand-navyLight text-white text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <h2 class="text-3xl font-extrabold mb-4">Vuoi Schermare il Tuo Terrazzo o Balcone?</h2>
       <p class="text-slate-300 text-sm max-w-xl mx-auto mb-8">
@@ -468,7 +497,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-brand-darker text-slate-400 text-xs py-10 border-t border-white/10">
+  <footer class="bg-brand-navy text-slate-400 text-xs py-10 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center space-x-3">
         <img src="images/Logo.png" alt="SALFER Logo" class="h-8 w-auto object-contain">
@@ -562,6 +591,7 @@
           state.modelloImg = m.img;
           updatePreview();
           updateSummary();
+          updateWhatsApp();
         });
         container.appendChild(btn);
       });
@@ -570,17 +600,12 @@
     // ----- CALCOLO PREZZO -----
     function calcolaPrezzo() {
       let prezzo = state.modelloBase;
-      // Fattore dimensioni (base 3x2.5)
       const area = state.larghezza * state.proiezione;
       const areaBase = 3 * 2.5;
       prezzo = prezzo * (area / areaBase);
-      // Tessuto
       prezzo += state.tessuto.price;
-      // Movimento
       prezzo += state.movimento.price;
-      // Optional
       state.optional.forEach(o => prezzo += o.price);
-      // Arrotondamento a 10 euro
       return Math.round(prezzo / 10) * 10;
     }
 
