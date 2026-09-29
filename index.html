@@ -131,8 +131,7 @@
 
     <div class="absolute inset-0 z-0">
       <video autoplay muted loop playsinline
-        poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
-        class="w-full h-full object-cover opacity-10 filter brightness-75">
+        class="w-full h-full object-cover opacity-60 filter brightness-75">
         <source src="video/hero.mp4" type="video/mp4">
       </video>
       <div class="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/60 to-transparent"></div>
@@ -249,6 +248,15 @@
           Soluzioni artigianali create su misura con profilati d'eccellenza e certificazioni per il risparmio
           energetico.
         </p>
+      </div>
+
+      <div class="flex justify-center -mt-4 mb-10">
+        <div
+          class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-red-50 border border-brand-red/20 text-brand-red text-sm font-semibold shadow-sm">
+          <i class="fa-solid fa-hand-pointer"></i>
+          <span>Seleziona una collezione per continuare e scoprire tutti i modelli</span>
+          <i class="fa-solid fa-arrow-down animate-bounce"></i>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -651,7 +659,7 @@
 
               <label
                 class="cursor-pointer border-2 border-slate-200 rounded-2xl p-4 text-center hover:border-brand-red hover:bg-red-50/20 transition flex flex-col items-center group has-[:checked]:border-brand-red has-[:checked]:bg-red-50/40">
-                <input type="radio" name="product" value="tende" class="hidden" onchange="updateProductSelection()">
+                <input type="radio" name="product" value="tende" class="hidden" onchange="window.location.href='tende-da-sole.html'">
                 <div
                   class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl mb-2 group-hover:text-brand-red group-hover:bg-red-100 transition">
                   <i class="fa-solid fa-sun"></i>
@@ -1376,6 +1384,10 @@
 
     // ================= SELEZIONE PRODOTTO DA CARD =================
     function selectProductPreset(productVal) {
+      if (productVal === 'tende') {
+        window.location.href = 'tende-da-sole.html';
+        return;
+      }
       const radio = document.querySelector(`input[name="product"][value="${productVal}"]`);
       if (radio) {
         radio.checked = true;
