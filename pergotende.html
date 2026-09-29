@@ -1,303 +1,407 @@
 <!DOCTYPE html>
-<html lang="it" class="scroll-smooth">
+<html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pergole Bioclimatiche & Pergotende a Napoli | SALFER Outdoor</title>
-  <meta name="description" content="Pergole bioclimatiche con lamelle orientabili, pergotende motorizzate e vetrate panoramiche a pacchetto a Napoli con SALFER.">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pergole Bioclimatiche & Pergotende a Napoli | SALFER Outdoor</title>
+<meta name="description" content="Configura la tua pergola bioclimatica, pergotenda o vetrata panoramica SALFER: misure, colore, chiusure laterali e LED.">
+<style>
+/* ====== COLORI SALFER: modifica qui i tuoi colori ====== */
+:root{
+  --brand:#0f2f4f;        /* colore principale (header, bottoni) */
+  --brand-dark:#0a2036;
+  --accent:#c9a24b;       /* colore di accento */
+  --bg:#ffffff; --soft:#f5f5f3; --line:#e2e2de; --text:#1c1c1c; --muted:#6b6b66;
+  --r:10px;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:"Helvetica Neue",Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              red: '#c71a1a',
-              redHover: '#a31414',
-              dark: '#121214',
-              darker: '#0a0a0c',
-              gold: '#d4a853',
-              grayBg: '#f8f9fa'
-            }
-          },
-          fontFamily: {
-            sans: ['Outfit', 'Montserrat', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
+/* header */
+header{position:sticky;top:0;z-index:50;background:var(--brand);color:#fff}
+.hd{max-width:1280px;margin:auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.5px}
+.logo img{height:38px}
+nav{display:flex;gap:28px;font-size:15px}
+nav a{opacity:.85}nav a:hover{opacity:1}
+.btn-prev{background:var(--accent);color:var(--brand-dark);padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px}
+@media(max-width:820px){nav{display:none}}
 
-  <style>
-    .glass-nav {
-      background: rgba(18, 18, 20, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-  </style>
+/* layout prodotto */
+.crumbs{max-width:1280px;margin:auto;padding:18px 24px 0;font-size:13px;color:var(--muted)}
+.crumbs a:hover{text-decoration:underline}
+.pdp{max-width:1280px;margin:auto;padding:20px 24px 48px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:start}
+@media(max-width:980px){.pdp{grid-template-columns:1fr;gap:24px}}
+
+/* galleria */
+.gallery{position:sticky;top:88px}
+@media(max-width:980px){.gallery{position:static}}
+.stage{position:relative;border-radius:var(--r);overflow:hidden;background:var(--soft);aspect-ratio:4/3}
+.stage img{width:100%;height:100%;object-fit:cover}
+.stage svg{width:100%;height:100%}
+.badge{position:absolute;left:14px;top:14px;background:#fff;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600}
+.thumbs{display:flex;gap:10px;margin-top:12px;overflow-x:auto;padding-bottom:4px}
+.thumb{flex:0 0 84px;height:64px;border-radius:8px;border:2px solid transparent;overflow:hidden;background:var(--soft);padding:0}
+.thumb.on{border-color:var(--brand)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb.live{display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--brand)}
+
+/* pannello configuratore */
+.panel h1{font-size:30px;line-height:1.2;margin-bottom:6px}
+.sub{color:var(--muted);font-size:15px;margin-bottom:14px}
+.price{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.price b{font-size:28px}
+.price small{color:var(--muted)}
+.ratings{font-size:13px;color:var(--muted);margin-bottom:18px}
+.opt{border-top:1px solid var(--line);padding:18px 0}
+.opt h3{font-size:15px;margin-bottom:10px;display:flex;justify-content:space-between}
+.opt h3 span{font-weight:400;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:10px 14px;font-size:14px}
+.chip.on{border-color:var(--brand);box-shadow:inset 0 0 0 1px var(--brand);font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.card{border:1.5px solid var(--line);border-radius:8px;padding:12px;text-align:left;background:#fff;font-size:13px}
+.card b{display:block;font-size:14px;margin-bottom:2px}
+.card.on{border-color:var(--brand);box-shadow:inset 0 0 0 1px var(--brand)}
+.sw{display:flex;gap:12px;flex-wrap:wrap}
+.sw button{width:44px;height:44px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1.5px var(--line)}
+.sw button.on{box-shadow:0 0 0 2.5px var(--brand)}
+.range{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin:6px 0 12px}
+.range label{font-size:14px}
+input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--brand)}
+.val{font-weight:600;font-size:14px}
+.sides{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.side{border:1.5px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13px;background:#fff}
+.side select{width:100%;margin-top:6px;padding:8px;border:1px solid var(--line);border-radius:6px;font:inherit;font-size:13px}
+.tog{display:flex;justify-content:space-between;align-items:center;border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;font-size:14px;margin-bottom:8px;background:#fff}
+.tog.on{border-color:var(--brand)}
+.tog em{font-style:normal;color:var(--muted);font-size:12px;display:block}
+.sum{background:var(--soft);border-radius:var(--r);padding:16px;margin:8px 0 14px;font-size:14px}
+.sum h3{font-size:15px;margin-bottom:8px}
+.sum div{display:flex;justify-content:space-between;padding:3px 0}
+.sum .tot{border-top:1px solid var(--line);margin-top:8px;padding-top:10px;font-size:18px;font-weight:700}
+.cta{width:100%;background:var(--brand);color:#fff;border:0;border-radius:999px;padding:16px;font-size:16px;font-weight:600;margin-bottom:10px;display:block;text-align:center}
+.cta:hover{background:var(--brand-dark)}
+.cta.alt{background:#fff;color:var(--brand);border:1.5px solid var(--brand)}
+.note{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
+.trust{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+.trust div{border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13px}
+.trust b{display:block}
+
+/* accordion info */
+.info{max-width:1280px;margin:auto;padding:0 24px 24px}
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 4px;font-weight:600;font-size:17px;display:flex;justify-content:space-between}
+summary::after{content:"+";font-size:22px;font-weight:300}
+details[open] summary::after{content:"–"}
+.body{padding:0 4px 24px;max-width:820px;color:#333}
+.body p{margin-bottom:10px}
+.body ul{padding-left:20px;margin-bottom:10px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+td{padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:600;width:42%}
+
+/* galleria lavori */
+.works{background:var(--soft);padding:56px 24px}
+.works .in{max-width:1280px;margin:auto}
+.works h2,.feat h2{font-size:28px;margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+.grid figure img{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:var(--r)}
+.grid figcaption{font-size:13px;margin-top:6px;color:var(--muted)}
+.feat{max-width:1280px;margin:auto;padding:56px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.feat{grid-template-columns:1fr}}
+.feat h2{grid-column:1/-1}
+.feat div{border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.feat h3{margin-bottom:6px}
+.help{background:var(--brand);color:#fff;text-align:center;padding:52px 24px}
+.help h2{margin-bottom:8px}.help p{opacity:.85;margin-bottom:20px}
+.help .cta{display:inline-block;width:auto;padding:14px 28px;background:var(--accent);color:var(--brand-dark);margin:4px}
+footer{background:var(--brand-dark);color:#fff;padding:26px 24px;font-size:13px}
+.ft{max-width:1280px;margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft img{height:28px;display:inline;vertical-align:middle;margin-right:8px}
+.wa{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;border-radius:999px;padding:12px 18px;font-weight:600;font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:60}
+</style>
 </head>
-<body class="bg-[#fafafa] text-slate-800 font-sans selection:bg-brand-red selection:text-white">
+<body>
 
-  <!-- NAVBAR -->
-  <header class="glass-nav fixed top-0 w-full z-50 border-b border-white/10 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center space-x-3 group">
-        <img src="images/Logo.png" alt="SALFER Logo" class="h-12 w-auto object-contain group-hover:scale-105 transition">
-        <div class="flex flex-col">
-          <span class="text-2xl font-extrabold tracking-wider text-white uppercase leading-none">SALFER</span>
-          <span class="text-[10px] tracking-[0.25em] text-brand-gold uppercase font-semibold mt-1">Infissi di Design</span>
-        </div>
-      </a>
+<header>
+  <div class="hd">
+    <a class="logo" href="https://www.salfersrl.com/index.html"><img src="https://www.salfersrl.com/images/Logo.png" alt="SALFER Logo"><span>SALFER<br><small style="font-weight:400;font-size:11px;opacity:.8">Infissi di Design</small></span></a>
+    <nav>
+      <a href="https://www.salfersrl.com/index.html#home">Home</a>
+      <a href="https://www.salfersrl.com/index.html#prodotti">Tutte le Collezioni</a>
+      <a href="https://www.salfersrl.com/index.html#video-tour">Video e Lavori</a>
+      <a href="https://www.salfersrl.com/index.html#contatti">Contatti</a>
+    </nav>
+    <a class="btn-prev" href="https://www.salfersrl.com/index.html#preventivatore">Preventivatore</a>
+  </div>
+</header>
 
-      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-200">
-        <a href="index.html#home" class="hover:text-brand-red transition">Home</a>
-        <a href="index.html#prodotti" class="text-brand-gold font-bold transition">Tutte le Collezioni</a>
-        <a href="index.html#video-tour" class="hover:text-brand-red transition">Video e Lavori</a>
-        <a href="index.html#contatti" class="hover:text-brand-red transition">Contatti</a>
-      </nav>
+<div class="crumbs"><a href="https://www.salfersrl.com/index.html">Home</a> / <a href="https://www.salfersrl.com/index.html#prodotti">Collezioni</a> / Pergole &amp; Bioclimatiche</div>
 
-      <div class="flex items-center">
-        <a href="index.html#preventivatore" class="bg-brand-red hover:bg-brand-redHover text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-full shadow-lg shadow-brand-red/30 transition flex items-center gap-2">
-          <i class="fa-solid fa-calculator text-xs"></i> Preventivatore
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- BREADCRUMB & HERO -->
-  <section class="pt-28 pb-16 bg-brand-dark text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-      
-      <nav class="flex items-center space-x-2 text-xs text-slate-400 mb-6">
-        <a href="index.html" class="hover:text-white transition">Home</a>
-        <span>/</span>
-        <a href="index.html#prodotti" class="hover:text-white transition">Collezioni</a>
-        <span>/</span>
-        <span class="text-brand-gold font-semibold">Pergole & Bioclimatiche</span>
-      </nav>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="inline-block text-xs uppercase tracking-widest text-brand-gold font-bold bg-white/10 px-3 py-1 rounded-full mb-3">
-            Living Outdoor & Dehors
-          </span>
-          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
-            Pergole Bioclimatiche, Pergotende & Vetrate Panoramiche
-          </h1>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
-            Trasforma il tuo terrazzo o giardino in una stanza all'aperto da vivere in ogni stagione. Strutture autoportanti o addossate a parete in alluminio estruso, con lamelle frangisole orientabili, grondaie integrate e chiusure perimetrali panoramiche in vetro temperato.
-          </p>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="index.html#preventivatore" class="bg-brand-red hover:bg-brand-redHover text-white text-sm font-bold px-7 py-3.5 rounded-full shadow-xl shadow-brand-red/30 transition flex items-center gap-2">
-              <i class="fa-solid fa-calculator"></i> Calcola Stima Pergola
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=393483748816&text=Salve%20SALFER%2C%20vorrei%20informazioni%20sulle%20pergole%20e%20pergotende" target="_blank" class="bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-bold px-6 py-3.5 rounded-full shadow-lg transition flex items-center gap-2">
-              <i class="fa-brands fa-whatsapp text-lg"></i> Info su WhatsApp
-            </a>
-          </div>
-        </div>
-
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/15 h-96">
-          <img src="images/Pergotende est/gazebo_flat_autoportante_ic_tende-800x515.jpg" onerror="this.src='https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&q=80'" alt="Pergola Bioclimatica SALFER" class="w-full h-full object-cover">
-          <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-4 py-2 rounded-xl text-xs text-white">
-            <span class="font-bold text-brand-gold">Gazebo Flat Autoportante</span> • Con LED integrati
-          </div>
-        </div>
-      </div>
-
-    </div>
+<main class="pdp">
+  <!-- GALLERIA -->
+  <section class="gallery" aria-label="Immagini prodotto">
+    <div class="stage" id="stage"></div>
+    <div class="thumbs" id="thumbs"></div>
   </section>
 
-  <!-- SOLUZIONI OUTDOOR -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Le Nostre Strutture Outdoor</h2>
-        <p class="text-slate-500 text-sm mt-3">
-          Progettate per resistere a carichi di vento elevati e precipitazioni con scarico delle acque piovane nei montanti portanti.
-        </p>
-      </div>
+  <!-- CONFIGURATORE -->
+  <section class="panel" aria-label="Configuratore">
+    <h1 id="title">Pergola Bioclimatica a Lamelle</h1>
+    <p class="sub" id="sub">Lamelle orientabili da 0° a 140°, grondaie integrate, alluminio estruso.</p>
+    <div class="price"><small>Stima da</small><b id="priceTop">—</b><small>IVA inclusa</small></div>
+    <p class="ratings">Sopralluogo e rilievo misure gratuiti a Napoli e provincia</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 hover:shadow-xl transition">
-          <div class="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-xl font-bold mb-6">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3">Bioclimatiche a Lamelle</h3>
-          <p class="text-xs text-slate-600 leading-relaxed mb-4">
-            Lamelle orientabili da 0° a 140° che regolano luce solare e ventilazione naturale. In caso di pioggia, le lamelle si chiudono a tenuta stagna convogliando l'acqua nelle grondaie invisibili.
-          </p>
-          <ul class="text-xs text-slate-700 space-y-2">
-            <li><i class="fa-solid fa-check text-brand-red mr-2"></i> Motori radio Somfy invisibili</li>
-            <li><i class="fa-solid fa-check text-brand-red mr-2"></i> Strisce LED perimetrali dimmerabili</li>
-            <li><i class="fa-solid fa-check text-brand-red mr-2"></i> Struttura in alluminio a zero manutenzione</li>
-          </ul>
-        </div>
+    <div class="opt">
+      <h3>Struttura <span id="lbType"></span></h3>
+      <div class="cards" id="types"></div>
+    </div>
 
-        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 hover:shadow-xl transition">
-          <div class="w-12 h-12 rounded-2xl bg-brand-gold/15 text-brand-gold flex items-center justify-center text-xl font-bold mb-6">
-            <i class="fa-solid fa-layer-group"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3">Pergotende a Pacchetto</h3>
-          <p class="text-xs text-slate-600 leading-relaxed mb-4">
-            Telo retraibile in PVC oscurante a tre strati ignifugo. Quando aperta la tenda scompare sotto la tettoria di protezione lasciando il cielo completamente visibile.
-          </p>
-          <ul class="text-xs text-slate-700 space-y-2">
-            <li><i class="fa-solid fa-check text-brand-red mr-2"></i> Resistenza al vento classe 6 (100 km/h)</li>
-            <li><i class="fa-solid fa-check text-brand-red mr-2"></i> Installazione addossata o autoportante</li>
-            <li><i class="fa-solid fa-check text-brand-red mr-2"></i> Chiusure laterali con tende zip o vetrate</li>
-          </ul>
-        </div>
+    <div class="opt">
+      <h3>Installazione <span id="lbInst"></span></h3>
+      <div class="chips" id="inst"></div>
+    </div>
 
-        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 hover:shadow-xl transition">
-          <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-xl font-bold mb-6">
-            <i class="fa-regular fa-window-restore"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3">Vetrate Panoramiche "Full Glass"</h3>
-          <p class="text-xs text-slate-600 leading-relaxed mb-4">
-            Pannelli in vetro temperato di sicurezza scorrevoli e impacchettabili a libro. Zero profili verticali: trasparenza e visuale continua a 360 gradi.
-          </p>
-          <ul class="text-xs text-slate-700 space-y-2">
-            <li><i class="fa-solid fa-check text-brand-red mr-2"></i> Vetro temperato da 10 mm di sicurezza</li>
-            <li><i class="fa-solid fa-check text-brand-red mr-2"></i> Apertura totale dell'ambiente in estate</li>
-            <li><i class="fa-solid fa-check text-brand-red mr-2"></i> Spesso realizzabile in edilizia libera</li>
-          </ul>
-        </div>
+    <div class="opt">
+      <h3>Dimensioni <span id="lbSize"></span></h3>
+      <div class="chips" id="sizes"></div>
+      <div style="height:14px"></div>
+      <div class="range"><label for="w">Larghezza</label><span class="val" id="wv"></span>
+        <input type="range" id="w" min="2" max="7" step="0.1"></div>
+      <div class="range"><label for="d">Sporgenza</label><span class="val" id="dv"></span>
+        <input type="range" id="d" min="2" max="6" step="0.1"></div>
+      <div class="range"><label for="h">Altezza</label><span class="val" id="hv"></span>
+        <input type="range" id="h" min="2.2" max="3.2" step="0.05"></div>
+    </div>
 
-      </div>
+    <div class="opt">
+      <h3>Colore struttura <span id="lbCol"></span></h3>
+      <div class="sw" id="colors"></div>
+    </div>
 
+    <div class="opt" id="sidesBox">
+      <h3>Chiusure laterali <span>Scegli per ogni lato</span></h3>
+      <div class="sides" id="sides"></div>
+    </div>
+
+    <div class="opt">
+      <h3>Accessori</h3>
+      <div id="acc"></div>
+    </div>
+
+    <div class="sum">
+      <h3>La tua configurazione</h3>
+      <div id="sumRows"></div>
+      <div class="tot"><span>Stima totale</span><span id="priceSum">—</span></div>
+    </div>
+
+    <a class="cta" id="ctaWa" href="#" target="_blank" rel="noopener">Richiedi preventivo su WhatsApp</a>
+    <a class="cta alt" href="https://www.salfersrl.com/index.html#contatti">Prenota un sopralluogo gratuito</a>
+    <p class="note">Stima indicativa: il prezzo definitivo viene confermato dopo il rilievo misure.</p>
+
+    <div class="trust">
+      <div><b>Sopralluogo gratuito</b>Rilievo misure e rendering</div>
+      <div><b>Su misura</b>Progettazione 3D personalizzata</div>
+      <div><b>Alluminio estruso</b>Zero manutenzione</div>
+      <div><b>Installazione</b>Team SALFER a Napoli</div>
     </div>
   </section>
+</main>
 
-  <!-- FOTO GALLERY -->
-  <section class="py-20 bg-slate-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <span class="text-xs uppercase tracking-widest text-brand-red font-bold">Installazioni Reali</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Galleria Pergole & Vetrate SALFER</h2>
-        </div>
-      </div>
+<section class="info">
+  <details open><summary>Descrizione</summary><div class="body">
+    <p>Trasforma il tuo terrazzo o giardino in una stanza all'aperto da vivere in ogni stagione. Strutture autoportanti o addossate a parete in alluminio estruso, con lamelle frangisole orientabili, grondaie integrate e chiusure perimetrali panoramiche in vetro temperato.</p>
+    <ul>
+      <li><b>Bioclimatiche a Lamelle:</b> lamelle orientabili da 0° a 140°; in caso di pioggia si chiudono a tenuta stagna convogliando l'acqua nelle grondaie invisibili.</li>
+      <li><b>Pergotende a Pacchetto:</b> telo retraibile in PVC oscurante a tre strati ignifugo, che scompare sotto la tettoria di protezione.</li>
+      <li><b>Vetrate Panoramiche "Full Glass":</b> pannelli in vetro temperato scorrevoli e impacchettabili a libro, senza profili verticali.</li>
+    </ul></div></details>
+  <details><summary>Montaggio</summary><div class="body">
+    <p>L'installazione è eseguita dal team SALFER dopo il sopralluogo tecnico gratuito con rilievo misure. Le strutture possono essere addossate a parete o autoportanti.</p></div></details>
+  <details><summary>Informazioni tecniche</summary><div class="body"><table>
+    <tr><td>Materiale</td><td>Alluminio estruso</td></tr>
+    <tr><td>Lamelle (bioclimatica)</td><td>Orientabili da 0° a 140°</td></tr>
+    <tr><td>Motorizzazione</td><td>Motori radio Somfy invisibili</td></tr>
+    <tr><td>Illuminazione</td><td>Strisce LED perimetrali dimmerabili</td></tr>
+    <tr><td>Resistenza al vento (pergotenda)</td><td>Classe 6 (100 km/h)</td></tr>
+    <tr><td>Vetro (Full Glass)</td><td>Temperato di sicurezza da 10 mm</td></tr>
+    <tr><td>Installazione</td><td>Addossata o autoportante</td></tr>
+    <tr><td>Scarico acqua</td><td>Grondaie integrate nei montanti</td></tr></table></div></details>
+  <details><summary>Sopralluogo e consegna</summary><div class="body">
+    <p>Effettuiamo sopralluoghi tecnici gratuiti con rilievo misure e rendering per terrazzi, giardini e locali commerciali. Tempi e modalità di consegna vengono concordati in fase di preventivo.</p></div></details>
+</section>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        
-        <div class="group relative rounded-2xl overflow-hidden shadow-md h-64 bg-slate-200">
-          <img src="images/Pergotende est/IMG_1479-800x439.jpg" alt="Pergotenda con LED" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex items-end">
-            <span class="text-xs font-bold text-white">Pergola con Chiusure Laterali</span>
-          </div>
-        </div>
+<section class="works">
+  <div class="in">
+    <h2>Galleria Pergole &amp; Vetrate SALFER</h2>
+    <p style="color:var(--muted)">Installazioni reali</p>
+    <div class="grid" id="works"></div>
+  </div>
+</section>
 
-        <div class="group relative rounded-2xl overflow-hidden shadow-md h-64 bg-slate-200">
-          <img src="images/Pergotende est/Pergotende/LED2-800x439.jpg" alt="Illuminazione LED Pergola" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex items-end">
-            <span class="text-xs font-bold text-white">Illuminazione LED Notturna</span>
-          </div>
-        </div>
+<section class="feat">
+  <h2>La scelta migliore per il tuo spazio esterno</h2>
+  <div><h3>Consulenza specializzata</h3><p>Scrivici su WhatsApp: rispondiamo alle tue domande sul progetto.</p></div>
+  <div><h3>Progettazione 3D</h3><p>Rendering su misura per vedere la struttura prima di realizzarla.</p></div>
+  <div><h3>Per ogni stagione</h3><p>Sole, pioggia o vento: vivi il tuo spazio esterno tutto l'anno.</p></div>
+</section>
 
-        <div class="group relative rounded-2xl overflow-hidden shadow-md h-64 bg-slate-200">
-          <img src="images/Pergotende est/Pergotende/Master autoportante.jpg" alt="Master Autoportante" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex items-end">
-            <span class="text-xs font-bold text-white">Modello Master 4 Montanti</span>
-          </div>
-        </div>
+<section class="help">
+  <h2>Vuoi valorizzare il tuo spazio esterno?</h2>
+  <p>Sopralluoghi tecnici gratuiti con rilievo misure e rendering.</p>
+  <a class="cta" href="https://www.salfersrl.com/index.html#preventivatore">Vai al Preventivatore Online</a>
+  <a class="cta" id="ctaWa2" href="#" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+</section>
 
-        <div class="group relative rounded-2xl overflow-hidden shadow-md h-64 bg-slate-200">
-          <img src="images/Pergotende est/vetrate-scorrevoli-1.jpg" alt="Vetrate Scorrevoli Pergola" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex items-end">
-            <span class="text-xs font-bold text-white">Vetrate Scorrevoli per Pergola</span>
-          </div>
-        </div>
+<footer><div class="ft">
+  <div><img src="https://www.salfersrl.com/images/Logo.png" alt="SALFER Logo">SALFER SRL • P.IVA 09335381217</div>
+  <a href="https://www.salfersrl.com/index.html">Torna alla Home</a>
+</div></footer>
 
-        <div class="group relative rounded-2xl overflow-hidden shadow-md h-64 bg-slate-200">
-          <img src="images/vetrate panoramiche/full glass img 1.jpg" alt="Vetrata Panoramica Full Glass" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex items-end">
-            <span class="text-xs font-bold text-white">Vetrata Full Glass a Pacchetto</span>
-          </div>
-        </div>
+<a class="wa" id="waFloat" href="#" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
 
-        <div class="group relative rounded-2xl overflow-hidden shadow-md h-64 bg-slate-200">
-          <img src="images/vetrate panoramiche/full glass img2.jpg" alt="Vetrata Vista Mare" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex items-end">
-            <span class="text-xs font-bold text-white">Zero Impatto Visivo</span>
-          </div>
-        </div>
+<script>
+/* ====== DATI MODIFICABILI ====== */
+const WA = "393483748816";
+const IMG = "https://www.salfersrl.com/images/";
+const e = p => IMG + encodeURI(p);
 
-        <div class="group relative rounded-2xl overflow-hidden shadow-md h-64 bg-slate-200">
-          <img src="images/Pergotende est/gazebo_flat_autoportante_ic_tende-800x515.jpg" alt="Gazebo Flat IC Tende" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex items-end">
-            <span class="text-xs font-bold text-white">Gazebo Moderno IC Tende</span>
-          </div>
-        </div>
+/* Prezzi indicativi: SOSTITUISCI con i tuoi. base = €/m² */
+const TYPES = {
+  bio:  {name:"Bioclimatica a Lamelle", short:"Lamelle 0°–140°", base:520, sub:"Lamelle orientabili da 0° a 140°, grondaie integrate, alluminio estruso."},
+  perg: {name:"Pergotenda a Pacchetto", short:"Telo PVC retraibile", base:380, sub:"Telo retraibile in PVC oscurante a tre strati ignifugo, classe 6 al vento."},
+  glass:{name:"Vetrata Full Glass", short:"Vetro temperato 10 mm", base:0, sub:"Pannelli in vetro temperato scorrevoli e impacchettabili a libro."}
+};
+const INST = {wall:{name:"Addossata a parete",add:0}, free:{name:"Autoportante",add:350}};
+const COLORS = {
+  "Bianco":"#f2f2ee","Grigio antracite":"#3b3f44","Nero":"#161616","Bronzo":"#6b5a48","Grigio chiaro":"#b7b9b8"
+};
+const SIDE = {none:{n:"Nessuna",p:0}, zip:{n:"Tenda zip",p:140}, glass:{n:"Vetrata scorrevole",p:320}};
+const SIDES = ["Fronte","Retro","Sinistra","Destra"];
+const ACC = {
+  led:{n:"Strisce LED perimetrali dimmerabili",d:"Illuminazione notturna",p:450},
+  motor:{n:"Motori radio Somfy",d:"Comando a distanza",p:600}
+};
+const PHOTOS = {
+  bio:  [["Pergotende est/gazebo_flat_autoportante_ic_tende-800x515.jpg","Gazebo Flat Autoportante"],["Pergotende est/Pergotende/Master autoportante.jpg","Modello Master 4 Montanti"],["Pergotende est/Pergotende/LED2-800x439.jpg","Illuminazione LED"]],
+  perg: [["Pergotende est/IMG_1479-800x439.jpg","Pergola con chiusure laterali"],["Pergotende est/pergotenda.png","Progettazione 3D"],["Pergotende est/vetrate-scorrevoli-1.jpg","Vetrate scorrevoli"]],
+  glass:[["vetrate panoramiche/full glass img 1.jpg","Full Glass a pacchetto"],["vetrate panoramiche/full glass img2.jpg","Zero impatto visivo"],["Pergotende est/vetrate-scorrevoli-1.jpg","Vetrate scorrevoli"]]
+};
+const WORKS = [
+ ["Pergotende est/IMG_1479-800x439.jpg","Pergola con chiusure laterali"],
+ ["Pergotende est/Pergotende/LED2-800x439.jpg","Illuminazione LED notturna"],
+ ["Pergotende est/Pergotende/Master autoportante.jpg","Modello Master 4 montanti"],
+ ["Pergotende est/vetrate-scorrevoli-1.jpg","Vetrate scorrevoli per pergola"],
+ ["vetrate panoramiche/full glass img 1.jpg","Vetrata Full Glass a pacchetto"],
+ ["vetrate panoramiche/full glass img2.jpg","Zero impatto visivo"],
+ ["Pergotende est/gazebo_flat_autoportante_ic_tende-800x515.jpg","Gazebo moderno IC Tende"],
+ ["Pergotende est/pergotenda.png","Progettazione 3D su misura"]
+];
+const SIZES = [[3,3],[3,4],[3,5],[4,4],[4,5],[4,6],[5,5]];
 
-        <div class="group relative rounded-2xl overflow-hidden shadow-md h-64 bg-slate-200">
-          <img src="images/Pergotende est/pergotenda.png" alt="Render Progettuale Pergotenda" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex items-end">
-            <span class="text-xs font-bold text-white">Progettazione 3D su Misura</span>
-          </div>
-        </div>
+/* ====== STATO ====== */
+const S = {type:"bio", inst:"wall", w:4, d:3, h:2.6, color:"Grigio antracite",
+  sides:["none","none","none","none"], acc:{led:false,motor:false}, photo:0};
+const $ = id => document.getElementById(id);
+const eur = n => new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(n);
+const fmt = n => n.toFixed(1).replace(".",",")+" m";
 
-      </div>
+function price(){
+  const area = S.w*S.d, t = TYPES[S.type];
+  let p = t.base*area;
+  if(S.type!=="glass") p += INST[S.inst].add;
+  const per = [S.w,S.d,S.w,S.d]; // metri lineari per lato
+  S.sides.forEach((s,i)=>{p += SIDE[s].p*per[i]});
+  if(S.type==="glass"){ p = 0; S.sides.forEach((s,i)=>{p += (s==="none"?0:SIDE[s].p)*per[i]}); p += 200*S.w; }
+  if(S.acc.led) p += ACC.led.p*(S.type==="glass"?0:1);
+  if(S.acc.motor) p += ACC.motor.p*(S.type==="glass"?0:1);
+  return Math.round(p/10)*10;
+}
 
-    </div>
-  </section>
+/* ====== SVG LIVE ====== */
+function svg(){
+  const W=560,H=420, col=COLORS[S.color], dark=S.color==="Nero"||S.color==="Grigio antracite"||S.color==="Bronzo";
+  const sc = Math.min(340/S.w, 230/S.h)*0.92, pw=S.w*sc, ph=S.h*sc, x0=(W-pw)/2, gy=350, y0=gy-ph, post=10;
+  let s=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anteprima configurazione">
+  <rect width="${W}" height="${H}" fill="#e9eef1"/><rect y="${gy}" width="${W}" height="${H-gy}" fill="#cfcac0"/>
+  <rect x="${x0-20}" y="${y0-10}" width="${pw+40}" height="${ph+10}" fill="#f7f4ee" opacity=".55"/>`;
+  // chiusure fronte
+  const fr=S.sides[0];
+  if(fr!=="none"){ s+=`<rect x="${x0+post}" y="${y0+18}" width="${pw-post*2}" height="${ph-18}" fill="${fr==="glass"?"#a9d4e6":"#8b8478"}" opacity="${fr==="glass"?.35:.7}"/>`;
+    if(fr==="glass"){const n=Math.max(3,Math.round(S.w));for(let i=1;i<n;i++)s+=`<line x1="${x0+post+(pw-post*2)*i/n}" y1="${y0+18}" x2="${x0+post+(pw-post*2)*i/n}" y2="${gy}" stroke="#fff" stroke-width="1.5" opacity=".8"/>`;}}
+  // tetto
+  if(S.type==="bio"){ const n=Math.round(S.w*3); for(let i=0;i<n;i++){const lx=x0+post+(pw-post*2)*i/n;s+=`<rect x="${lx+1}" y="${y0+4}" width="${(pw-post*2)/n-2}" height="12" rx="2" fill="${col}" stroke="#0002"/>`;} }
+  else if(S.type==="perg"){ s+=`<rect x="${x0}" y="${y0+4}" width="${pw}" height="14" fill="${col}"/><path d="M${x0+post} ${y0+18} h${pw-post*2} v10 q-${(pw-post*2)/2} 12 -${pw-post*2} 0z" fill="#d9d2c3"/>`; }
+  // travi e montanti
+  s+=`<rect x="${x0-6}" y="${y0-6}" width="${pw+12}" height="14" rx="3" fill="${col}" stroke="#0003"/>
+  <rect x="${x0}" y="${y0}" width="${post}" height="${ph}" fill="${col}" stroke="#0003"/>
+  <rect x="${x0+pw-post}" y="${y0}" width="${post}" height="${ph}" fill="${col}" stroke="#0003"/>`;
+  // LED
+  if(S.acc.led&&S.type!=="glass"){for(let i=0;i<14;i++)s+=`<circle cx="${x0+post+(pw-post*2)*(i+.5)/14}" cy="${y0+22}" r="3" fill="#ffd77a"/>`;}
+  s+=`<text x="${W/2}" y="${gy+42}" text-anchor="middle" font-size="15" fill="#444" font-family="Arial">${fmt(S.w)} × ${fmt(S.d)} — h ${fmt(S.h)}</text>
+  <text x="${W/2}" y="${gy+64}" text-anchor="middle" font-size="12" fill="#777" font-family="Arial">Anteprima indicativa</text></svg>`;
+  return s;
+}
 
-  <!-- CTA PREVENTIVO -->
-  <section class="py-16 bg-gradient-to-r from-brand-dark to-brand-darker text-white text-center">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl font-extrabold mb-4">Vuoi Valorizzare il Tuo Spazio Esterno?</h2>
-      <p class="text-slate-300 text-sm max-w-xl mx-auto mb-8">
-        Effettuiamo sopralluoghi tecnici gratuiti con rilievo misure e rendering per terrazzi, giardini e locali commerciali.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="index.html#preventivatore" class="bg-brand-red hover:bg-brand-redHover text-white px-8 py-4 rounded-full font-bold text-sm shadow-xl transition flex items-center gap-2">
-          <i class="fa-solid fa-calculator"></i> Vai al Preventivatore Online
-        </a>
-        <a href="https://api.whatsapp.com/send?phone=393483748816&text=Salve%20SALFER%2C%20vorrei%20informazioni%20sulle%20pergole%20e%20pergotende" target="_blank" class="bg-[#25D366] hover:bg-[#20ba59] text-white px-7 py-4 rounded-full font-bold text-sm shadow-lg transition flex items-center gap-2">
-          <i class="fa-brands fa-whatsapp text-lg"></i> Scrivici su WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
+/* ====== RENDER ====== */
+function renderStage(){
+  const ph = PHOTOS[S.type];
+  $("stage").innerHTML = S.photo===-1 ? svg()
+    : `<img src="${e(ph[S.photo][0])}" alt="${ph[S.photo][1]}"><span class="badge">${ph[S.photo][1]}</span>`;
+  $("thumbs").innerHTML = `<button class="thumb live ${S.photo===-1?"on":""}" data-p="-1">Anteprima live</button>` +
+    ph.map((p,i)=>`<button class="thumb ${S.photo===i?"on":""}" data-p="${i}"><img src="${e(p[0])}" alt="${p[1]}"></button>`).join("");
+  document.querySelectorAll(".thumb").forEach(b=>b.onclick=()=>{S.photo=+b.dataset.p;renderStage()});
+}
+function renderOpts(){
+  $("types").innerHTML = Object.entries(TYPES).map(([k,t])=>`<button class="card ${S.type===k?"on":""}" data-k="${k}"><b>${t.name}</b>${t.short}</button>`).join("");
+  $("inst").innerHTML = Object.entries(INST).map(([k,t])=>`<button class="chip ${S.inst===k?"on":""}" data-k="${k}">${t.name}</button>`).join("");
+  $("sizes").innerHTML = SIZES.map(([a,b])=>`<button class="chip ${S.w===a&&S.d===b?"on":""}" data-w="${a}" data-d="${b}">${a}×${b} m</button>`).join("");
+  $("colors").innerHTML = Object.entries(COLORS).map(([n,c])=>`<button class="${S.color===n?"on":""}" style="background:${c}" title="${n}" aria-label="${n}" data-n="${n}"></button>`).join("");
+  $("sides").innerHTML = SIDES.map((n,i)=>`<div class="side">${n}<select data-i="${i}">${Object.entries(SIDE).map(([k,v])=>`<option value="${k}" ${S.sides[i]===k?"selected":""}>${v.n}${v.p?` (+${v.p} €/m)`:""}</option>`).join("")}</select></div>`).join("");
+  $("acc").innerHTML = Object.entries(ACC).map(([k,a])=>`<button class="tog ${S.acc[k]?"on":""}" data-k="${k}" style="width:100%;text-align:left"><span>${a.n}<em>${a.d}</em></span><b>${S.acc[k]?"Aggiunto":"+ "+eur(a.p)}</b></button>`).join("");
+  $("acc").style.display = S.type==="glass"?"none":"block";
+  $("acc").previousElementSibling.style.display = S.type==="glass"?"none":"flex";
+  document.querySelector("#inst").parentElement.style.display = S.type==="glass"?"none":"block";
+  $("types").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.type=b.dataset.k;S.photo=0;renderAll()});
+  $("inst").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.inst=b.dataset.k;update();renderOpts()});
+  $("sizes").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.w=+b.dataset.w;S.d=+b.dataset.d;syncRanges();update();renderOpts()});
+  $("colors").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.color=b.dataset.n;update();renderOpts()});
+  $("sides").querySelectorAll("select").forEach(s=>s.onchange=()=>{S.sides[+s.dataset.i]=s.value;update()});
+  $("acc").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.acc[b.dataset.k]=!S.acc[b.dataset.k];update();renderOpts()});
+}
+function syncRanges(){ $("w").value=S.w; $("d").value=S.d; $("h").value=S.h; }
+function update(){
+  const t=TYPES[S.type], p=price();
+  $("title").textContent=t.name; $("sub").textContent=t.sub;
+  $("lbType").textContent=t.name; $("lbInst").textContent=INST[S.inst].name;
+  $("lbSize").textContent=`${fmt(S.w)} × ${fmt(S.d)}`; $("lbCol").textContent=S.color;
+  $("wv").textContent=fmt(S.w); $("dv").textContent=fmt(S.d); $("hv").textContent=fmt(S.h);
+  $("priceTop").textContent=$("priceSum").textContent=eur(p);
+  const rows=[["Struttura",t.name]];
+  if(S.type!=="glass") rows.push(["Installazione",INST[S.inst].name]);
+  rows.push(["Dimensioni",`${fmt(S.w)} × ${fmt(S.d)} × h ${fmt(S.h)}`],["Colore",S.color]);
+  const sd=S.sides.map((s,i)=>s!=="none"?`${SIDES[i]}: ${SIDE[s].n}`:null).filter(Boolean);
+  rows.push(["Chiusure",sd.length?sd.join(", "):"Nessuna"]);
+  if(S.type!=="glass"){const a=Object.keys(ACC).filter(k=>S.acc[k]).map(k=>ACC[k].n);rows.push(["Accessori",a.length?a.join(", "):"Nessuno"]);}
+  $("sumRows").innerHTML=rows.map(r=>`<div><span>${r[0]}</span><span style="text-align:right;max-width:60%">${r[1]}</span></div>`).join("");
+  const msg=`Salve SALFER, vorrei un preventivo:\n`+rows.map(r=>`• ${r[0]}: ${r[1]}`).join("\n")+`\nStima indicativa: ${eur(p)}`;
+  const url=`https://api.whatsapp.com/send?phone=${WA}&text=${encodeURIComponent(msg)}`;
+  $("ctaWa").href=$("ctaWa2").href=$("waFloat").href=url;
+  document.querySelectorAll("#sizes .chip").forEach(c=>c.classList.toggle("on",+c.dataset.w===S.w&&+c.dataset.d===S.d));
+  if(S.photo===-1) $("stage").innerHTML=svg();
+}
+function renderAll(){renderStage();renderOpts();update();}
 
-  <!-- FOOTER -->
-  <footer class="bg-brand-darker text-slate-400 text-xs py-10 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center space-x-3">
-        <img src="images/Logo.png" alt="SALFER Logo" class="h-8 w-auto object-contain">
-        <span class="text-white font-bold">SALFER SRL</span>
-        <span>• P.IVA 09335381217</span>
-      </div>
-      <div>
-        <a href="index.html" class="text-brand-gold hover:underline">Torna alla Home</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- PULSANTE WHATSAPP FISSO -->
-  <a href="https://api.whatsapp.com/send?phone=393483748816&text=Salve%20SALFER%2C%20vorrei%20informazioni%20sulle%20pergole%20e%20pergotende" 
-     target="_blank" 
-     rel="noopener noreferrer"
-     aria-label="Contattaci su WhatsApp" 
-     class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl shadow-emerald-950/40 hover:scale-105 active:scale-95 transition-all duration-300 group border-2 border-white/20">
-    <i class="fa-brands fa-whatsapp text-2xl text-white"></i>
-    <span class="hidden sm:inline font-bold text-xs tracking-wide">Scrivici su WhatsApp</span>
-    <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-      <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
-    </span>
-  </a>
-
+["w","d","h"].forEach(id=>$(id).oninput=e=>{S[id]=+e.target.value;update();});
+$("works").innerHTML=WORKS.map(w=>`<figure><img loading="lazy" src="${e(w[0])}" alt="${w[1]}"><figcaption>${w[1]}</figcaption></figure>`).join("");
+syncRanges(); renderAll();
+</script>
 </body>
 </html>
